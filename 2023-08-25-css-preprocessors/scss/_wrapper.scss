@@ -1,0 +1,89 @@
+@use 'variables/colors';
+@use 'variables/spacings';
+@use 'responsive/responsive';
+
+.wrapper {
+  padding: spacings.$spacing-3;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.half-width {
+    width: 50%;
+
+    @include responsive.sm {
+      width: 100%;
+    }
+  }
+
+  &.bg-dark {
+    background-color: rgb(54, 54, 54);
+  }
+
+  h2 {
+    font-size: 40px;
+
+    @include responsive.sm {
+      width: 20px;
+    }
+
+    &.color-red {
+      color: colors.$red;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: colors.$green;
+      }
+    }
+  }
+
+  // p::before {
+  //   content: '- ';
+  //   color: $color-red;
+  // }
+
+  // p.empty::before {
+  //   content: none;
+  // }
+
+  // p {
+  //   text-decoration: underline;
+
+  //   &::before {
+  //     content: '- ';
+  //     color: $color-red;
+  //   }
+
+  //   &.empty {
+  //     &::before {
+  //       content: none;
+  //     }
+  //   }    
+  // }
+
+  // p:not(.empty)::before {
+  //   content: '- ';
+  //   color: variables.$color-red;
+  // }
+
+  p {
+    text-decoration: underline;
+    
+    &:not(.empty)::before {
+      content: '- ';
+      color: colors.$red;
+    }
+
+    &:first-of-type {
+      font-size: 30px;
+    }
+  }
+
+  .box {
+    & > p {
+      color: rgb(255, 246, 121);
+    }
+  }
+}

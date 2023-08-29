@@ -1,0 +1,39 @@
+@use 'responsive';
+
+.bg-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  background-image: url('programs-banner.jpg');
+  margin-bottom: 30px;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 26px;
+  padding: 31px 45px;
+  background-repeat: no-repeat;
+  background-position: 80% 70%;
+  background-size: 40%;
+
+  @include responsive.large {
+    background-size: 70%;
+  }
+
+  @include responsive.sm {
+    background-size: 120%;
+    padding-bottom: 250px;
+    background-position: 80% 100%;
+  }
+
+  .link-text-wrapper {
+    @include responsive.large {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  svg {
+    fill: #1200ff;
+  }
+}

@@ -1,0 +1,89 @@
+@use 'responsive';
+
+.hero-box {
+  background-color: black;
+  color: white;
+
+  .hero-box-wrapper {
+    margin-left: 100px;
+    padding-top: 171px;
+    padding-bottom: 139px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 386px;
+
+    @include responsive.large {
+      margin-left: 0;
+    }
+
+    @include responsive.md {
+      row-gap: 188px;
+    }
+
+    .hero-box-content {
+      max-width: 670px;
+
+      @include responsive.md {
+        max-width: 315px;
+      }
+
+      .hero-box-title {
+        font-size: 100px;
+        margin-top: 0;
+        margin-bottom: 18px;
+        line-height: 1;
+
+        @include responsive.md {
+          font-size: 36px;
+        }
+      }
+
+      .hero-box-description {
+        max-width: 370px;
+
+        p {
+          font-size: 17px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 50px;
+
+      .service-item {
+        width: 50%;
+
+        @include responsive.md {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &:nth-of-type(odd) {
+          padding-right: 115px;
+
+          @include responsive.md {
+            padding-right: 0;
+          }
+        }
+
+        &:nth-of-type(even) {
+          border-left: 2px solid white;
+          padding-left: 115px;
+
+          @include responsive.md {
+            padding-left: 0;
+            border: none;
+          }
+        }
+
+        .service-title {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

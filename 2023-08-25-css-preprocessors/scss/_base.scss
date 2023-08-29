@@ -1,0 +1,19 @@
+@use 'variables/colors';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: aquamarine;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.bg-dark {
+  background-color: black;
+  color: colors.$white;
+}

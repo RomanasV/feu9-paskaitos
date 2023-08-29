@@ -1,0 +1,209 @@
+.programs-list {
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  /* width: calc(100% / 3 * 2); */
+}
+@media (max-width: 950px) {
+  .programs-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .programs-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .programs-list {
+    grid-template-columns: 1fr;
+  }
+}
+.programs-list .program-item {
+  background-color: white;
+  padding: 40px 40px 25px;
+  position: relative;
+  /* width: calc((100% - 30px) / 2); */
+}
+.programs-list .program-item a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 30px;
+  height: 100%;
+}
+.programs-list .program-item .program-main-info .program-image {
+  height: 97px;
+}
+.programs-list .program-item .program-main-info .program-description {
+  margin-bottom: 0;
+}
+.programs-list .program-item .program-secondary-info ul.program-features-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.programs-list .program-item .program-secondary-info ul.program-features-list li.program-features-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.programs-list .program-item .program-secondary-info ul.program-features-list li.program-features-item svg, .programs-list .program-item .program-secondary-info ul.program-features-list li.program-features-item img {
+  justify-self: flex-end;
+}
+.programs-list .program-item .program-secondary-info .program-extra-info {
+  background-color: #ff00e9;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 50px;
+  position: absolute;
+  top: 20px;
+  right: -15px;
+}
+
+.bg-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  background-image: url("programs-banner.jpg");
+  margin-bottom: 30px;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 26px;
+  padding: 31px 45px;
+  background-repeat: no-repeat;
+  background-position: 80% 70%;
+  background-size: 40%;
+}
+@media (max-width: 800px) {
+  .bg-image {
+    background-size: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .bg-image {
+    background-size: 120%;
+    padding-bottom: 250px;
+    background-position: 80% 100%;
+  }
+}
+@media (max-width: 800px) {
+  .bg-image .link-text-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.bg-image svg {
+  fill: #1200ff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+.container {
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.color-primary {
+  color: #ff00e9;
+}
+
+.color-black {
+  color: black;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid #1200ff;
+  color: #1200ff;
+  text-transform: uppercase;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+fieldset label {
+  font-weight: 400;
+}
+fieldset .form-control {
+  flex-direction: row;
+}
+
+label, legend {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.programs-content {
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+@media (max-width: 950px) {
+  .programs-content {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+@media (max-width: 700px) {
+  .programs-content {
+    grid-template-columns: 1fr;
+  }
+}
+.programs-content .programs-filter {
+  background-color: white;
+  padding: 45px 40px 40px;
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  /* width: calc(100% / 3); */
+}
+@media (max-width: 700px) {
+  .programs-content .programs-filter {
+    position: static;
+  }
+}
+.programs-content .programs-filter .programs-found {
+  font-size: 24px;
+}/*# sourceMappingURL=programs.css.map */

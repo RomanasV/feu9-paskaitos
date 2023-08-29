@@ -1,0 +1,99 @@
+@use 'scss/programs-page/responsive';
+@use 'scss/programs-page/programs-list';
+@use 'scss/programs-page/bg-image-link';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+.container {
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.color-primary {
+  color: #ff00e9;
+}
+
+.color-black {
+  color: black;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid #1200ff;
+  color: #1200ff;
+  text-transform: uppercase;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  label {
+    font-weight: 400;
+  }
+
+  .form-control {
+    flex-direction: row;
+  }
+}
+
+label, legend {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.programs-content {
+  /* display: flex; */
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: flex-start;
+
+  @include responsive.xl {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  @include responsive.md {
+    grid-template-columns: 1fr;
+  }
+
+  .programs-filter {
+    background-color: white;
+    padding: 45px 40px 40px;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    /* width: calc(100% / 3); */
+
+    @include responsive.md {
+      position: static;
+    }
+  
+    .programs-found {
+      font-size: 24px;
+    }
+  }
+}

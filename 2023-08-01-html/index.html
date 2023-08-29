@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mano pirmasis puslapis</title>
+  <style>
+    body {
+      margin-bottom: 500px;
+    }
+  </style>
+</head>
+<body>
+  <header>Mano super header</header>
+  <a href="#page-footer">Scroll down to the footer</a>
+
+  <!-- Block Type HTML elements -->
+
+  <!-- 
+    Block tipo HTML elementai:
+    1. Prasideda naujoje eilutėje
+    2. Užima pilną tėvinio elemento plotą.
+   -->
+
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <div id="page-headings">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+  </div>
+
+  <p><dfn>Lorem ipsum</dfn> dolor sit <i>amet consectetur</i> adipisicing elit. <b>Adipisci saepe</b> fugit, beatae vitae quae vel <em>voluptatum facere</em> provident, quia at <strong>praesentium</strong>, nisi sunt delectus id repellat perferendis! <mark>Quis, quas sapiente.</mark></p>
+
+  <p><cite>Lorem ipsum</cite> dolor, sit amet consectetur adipisicing elit. Et dolores alias rerum error hic <code>div animi quia voluptatem</code> sit inventore placeat sed impedit aperiam vero porro, itaque doloribus ea modi?</p>
+
+  <p><span>Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit. Adipisci quis, quae ad animi amet necessitatibus omnis, quos molestiae sunt, inventore debitis? Voluptatum, non sed aliquam ipsum velit nobis quisquam? Molestias!</p>
+
+  <p>
+    Pirma eilute,<br>
+    Antra eilute.<br>
+    Trecia eilute<br>
+    Ketvirta eilute.
+  </p>
+
+  <!-- 
+  1. Visi ol ir ul elementų vaikiniai elementai privalo būti li elementai.
+  2. li elementai yra naudojami TIK kaip ul arba ol elementų vaikiniai elementai.
+  -->
+
+  <!-- Unordered list - nenumeruotas sąrašas -->
+
+  <ul>
+    <li>Pirmas</li>
+    <li>Antras</li>
+    <li>Trečias</li>
+    <li>Ketvirtas</li>
+  </ul>
+
+  <!-- Ordered list - numeruotas sąrašas -->
+
+  <ol start="11">
+    <li>Vienas</li>
+    <li>Du</li>
+    <li>Trys</li>
+    <li>Keturi</li>
+  </ol>
+
+  <!-- Nesting lists -->
+  <ul>
+    <li>Vienas</li>
+    <li>Du</li>
+
+    <li>
+      Trys:
+
+      <ol>
+        <li>Pirmas</li>
+        <li>Antras</li>
+      </ol>
+    </li>
+
+    <li>Keturi</li>
+  </ul>
+
+  <address>
+    Written by.<br>
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA
+  </address>
+
+  <!-- INLINE Type HTML elements -->
+  <button>Click Me</button>
+  
+  <a href="https://www.google.com" target="_blank">Nuoroda į google</a>
+  <a href="/contacts.html">Contact Us Page</a>
+  <a href="tel:8-64-56431">Susisiekite telefonu</a>
+  <a href="mailto:info@test.com">Susisiekite el. paštu</a>
+  <a href="#page-headings">Back to the headings</a>
+
+  <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Two puppies in the field" width="200">
+  <img src="/images/cat.avif" alt="Cat" width="200">
+
+  <div>
+    <a href="#">
+      <img src="images/pexels-photo-1108099a.webp" alt="Du šuniukai">
+      <h4>Šuniukai</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus eaque ipsa magni. Quis, nihil aut.</p>
+    </a>
+  </div>
+
+  <input type="text" maxlength="15" placeholder="Enter your name">
+  <input type="number" min="1" max="100" placeholder="Age" step="0.1">
+  <input type="password">
+  <input type="range">
+  <input type="date">
+  <input type="color">
+  <input type="checkbox">
+
+  <textarea cols="50" rows="5"></textarea>
+
+  <select>
+    <option>Pirmas</option>
+    <option>Antras</option>
+    <option>Trečias</option>
+  </select>
+
+  <footer id="page-footer">
+    <h2>Susisiekite su mumis</h2>
+
+    <ul>
+      <li>
+        <a href="#" title="Instagram Profile">
+          <img src="images/instagram-icon.avif" alt="Instagram Icon" width="48">
+        </a>
+      </li>
+      
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Linkedin</a></li>
+    </ul>
+
+    <small>Copyright 2023</small>
+  </footer>
+</body>
+</html>

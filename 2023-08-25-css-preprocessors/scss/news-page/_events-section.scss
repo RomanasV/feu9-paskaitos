@@ -1,0 +1,56 @@
+.events-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    .event-item {
+      background-color: black;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .event-content {
+        padding: 50px 20px 20px;
+        position: relative;
+
+        .event-date {
+          display: flex;
+          flex-direction: column;
+          width: 70px;
+          text-align: center;
+          border-radius: 8px;
+          overflow: hidden;
+          position: absolute;
+          top: -40px;
+
+          .event-day {
+            background-color: white;
+            color: black;
+            font-size: 32px;
+            padding: 5px;
+          }
+          
+          .event-month {
+            background-color: #ff00e9;
+            text-transform: uppercase;
+            padding: 5px;
+          }
+        }
+
+        .event-info {
+          .event-title {
+            margin-bottom: 0;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}

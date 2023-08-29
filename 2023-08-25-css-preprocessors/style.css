@@ -1,0 +1,75 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: aquamarine;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.bg-dark {
+  background-color: black;
+  color: white;
+}
+
+.wrapper {
+  padding: 30px;
+}
+.wrapper.full-width {
+  width: 100%;
+}
+.wrapper.half-width {
+  width: 50%;
+}
+@media (max-width: 299px) {
+  .wrapper.half-width {
+    width: 100%;
+  }
+}
+.wrapper.bg-dark {
+  background-color: rgb(54, 54, 54);
+}
+.wrapper h2 {
+  font-size: 40px;
+}
+@media (max-width: 299px) {
+  .wrapper h2 {
+    width: 20px;
+  }
+}
+.wrapper h2.color-red {
+  color: red;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.wrapper h2.color-red:hover {
+  color: green;
+}
+.wrapper p {
+  text-decoration: underline;
+}
+.wrapper p:not(.empty)::before {
+  content: "- ";
+  color: red;
+}
+.wrapper p:first-of-type {
+  font-size: 30px;
+}
+.wrapper .box > p {
+  color: rgb(255, 246, 121);
+}
+
+.container {
+  width: 70%;
+  margin: 30px auto;
+}
+
+.box {
+  border: 2px solid green;
+  padding: 30px;
+  margin-bottom: 30px;
+}/*# sourceMappingURL=style.css.map */

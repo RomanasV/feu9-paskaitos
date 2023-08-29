@@ -1,0 +1,12 @@
+@use 'responsive';
+
+.video-section {
+  iframe {
+    width: 100%;
+    height: 450px;
+
+    @include responsive.xl {
+      height: 350px;
+    }
+  } 
+}

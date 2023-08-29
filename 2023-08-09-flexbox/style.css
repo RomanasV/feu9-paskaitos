@@ -1,0 +1,35 @@
+.container {
+  background-color: bisque;
+  height: 500px;
+  width: 500px;
+  display: flex;
+
+  /* flex-direction nusako pagrindinės ašies kryptį */
+  flex-direction: row;
+
+  /* justify-content reguliuoja VAIKINIŲ elementų poziciją pagrindinėje ašyje */
+  justify-content: center;
+
+  /* align-items reguliuoja VAIKINIŲ elementų poziciją pagalbinėje ašyje */
+  align-items: center;
+}
+
+
+.child {
+  height: 100px;
+  width: 100px;
+}
+
+.blue {
+  background-color: blue;
+  align-self: flex-start;
+}
+
+.green {
+  background-color: green;
+  order: -1;
+}
+
+.red {
+  background-color: red;
+}

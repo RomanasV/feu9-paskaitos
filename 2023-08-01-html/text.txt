@@ -1,0 +1,42 @@
+Sukurti HTML puslapį pasirinkta tematika. Tai gali būti puslapis apie jus pačius, hobius, paskaitų konspektas, CV ar bet kokia kita pasirinkta tema.
+
+1. Puslapis privalo turėti bent 5 skirtingas skiltis skirtingoms temoms aprašyti:
+1.1. Skiltims atskirti panaudoti grupuojančius elementus: div, section, main, header, footer ar bet kuri kitą.
+1.2. Kiekvienoje skiltyje turi būti jos pavadinimas.
+
+2. Bent vienoje vietoje panaudoti:
+2.1. ul elementą.
+2.2. ol elementą.
+2.3. button elementą.
+
+3. Panaudoti bent 5 p elementus.
+3.1. Paragrafuose (p elemente) panaudoti bent 3 skirtingus inline elementus (em, strong ar panašius).
+
+4. Panaudoti bent 3 skirtingas nuotraukas (img elementas):
+4.1. Bent viena iš nuotraukų privalo būti talpinama savo projekte.
+4.2. Bent vienos nuotraukos nuoroda turėtų būti ne iš savo projekto.
+4.3. Bent viena nuotrauka turi veikti kaip nuoroda į kitą puslapį.
+
+5. Panaudoti bent 3 skirtingas nuorodas (a elementas):
+5.1. Viena nuoroda turi būti į kitą puslapį.
+5.2. Viena nuoroda turi būti į puslapį savo projekte.
+5.3. Vienoje nuorodoje turi būti atvaizduojami daugiau nei vienas elementas, pvz. pavadinimas ir nuotrauka.
+
+
+6. Sukurti header elementą, kuris atvaizduojamas visuose puslapiuose. Jame turi būti:
+6.1. Logotipas (jį paspaudus nukreipiama į pagrindinį puslapį).
+6.2. Navigacija:
+6.2.1. Į kitus vidinius puslapius.
+6.2.2. TIK PAGRINDINIAME PUSLAPYJE: į tame pačiame puslapyje esančias skiltis (pagal skilčių ID).
+
+7. Sukurti footer elementą, kuris atvaizduojamas visuose puslapiuose. Jame turi būti:
+7.1. Logotipas.
+7.2. Navigacija į kitus vidinius puslapius.
+7.3. Sąrašas, kuriame yra nuorodos į socialinius tinklus. Kiekviena nuoroda turi būti atvaizduojama kaip to socialinio puslapio ikonėlė.
+7.4. Forma, kurioje turi būti:
+7.4.1. Vardui įrašyti skirtas laukelis.
+7.4.2. El. paštui skirtas įrašyti laukelis.
+7.4.3. Tel. numeriui skirtas įrašyti laukelis.
+7.4.4. Laukelis skirtas žinutei įrašyti.
+7.4.5. Checkbox tipo laukelis „Sutinku su privatumo taisyklėmis"
+7.4.6. Mygtukas skirtas formai išsiųsti.

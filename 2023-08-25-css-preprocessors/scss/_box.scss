@@ -1,0 +1,8 @@
+@use 'variables/colors';
+@use 'variables/spacings';
+
+.box {
+  border: 2px solid colors.$green;
+  padding: spacings.$spacing-3;
+  margin-bottom: spacings.$spacing-3;
+}

@@ -1,0 +1,47 @@
+@use 'responsive';
+
+.main-header {
+  background-color: white;
+
+  .main-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 35px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    .logo-wrapper {
+      display: flex;
+    }
+
+    .main-navigation {
+      display: flex;
+      align-items: center;
+      column-gap: 14px;
+
+      @include responsive.xl {
+        display: none;
+      }
+      
+      ul.menu-list {
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        li.menu-item {
+          a.menu-link {
+            text-decoration: none;
+            color: black;
+            padding: 8px 14px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

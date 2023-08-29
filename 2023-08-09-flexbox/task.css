@@ -1,0 +1,249 @@
+h1 {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+p {
+  font-family: 'Hanken Grotesk', sans-serif;
+
+  font-weight: 800;
+}
+
+body {
+  margin-bottom: 1000px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.rose {
+  background-color: rosybrown;
+}
+
+.container {
+  background-color: beige;
+  height: 600px;
+  width: 600px;
+}
+
+.container-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* PIRMAS BŪDAS */
+/* .container-1 .child:nth-child(1) {
+  width: 200px;
+  height: 200px;
+}
+
+.container-1 .child:nth-child(2) {
+  width: 400px;
+  height: 200px;
+}
+
+.container-1 .child:nth-child(3) {
+  width: 400px;
+  height: 200px;
+}
+
+.container-1 .child:nth-child(4) {
+  width: 200px;
+  height: 200px;
+}
+
+.container-1 .child:nth-child(5) {
+  width: 200px;
+  height: 200px;
+}
+
+.container-1 .child:nth-child(6) {
+  width: 400px;
+  height: 200px;
+} */
+
+/* ANTRAS BŪDAS */
+/* .container-1 .child:nth-child(1),
+.container-1 .child:nth-child(4),
+.container-1 .child:nth-child(5) {
+  width: 200px;
+  height: 200px;
+}
+
+.container-1 .child:nth-child(2),
+.container-1 .child:nth-child(3),
+.container-1 .child:nth-child(6) {
+  width: 400px;
+  height: 200px;
+} */
+
+/* TREČIAS BŪDAS */
+/* .container-1 .child {
+  height: 200px;
+  width: 200px;
+}
+
+.container-1 .child:nth-child(2),
+.container-1 .child:nth-child(3),
+.container-1 .child:nth-child(6) {
+  width: 400px;
+} */
+
+/* KETVIRTAS BŪDAS */
+.container-1 .child {
+  height: 200px;
+  width: 200px;
+}
+
+.container-1 .child:nth-of-type(4n + 2),
+.container-1 .child:nth-of-type(4n + 3) {
+  width: 400px;
+}
+
+.container-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-3 .child {
+  height: 200px;
+  width: 200px;
+}
+
+.container-3 .child:nth-child(1) {
+  height: 400px;
+  width: 400px;
+}
+
+.container-3 .inner-container {
+  height: 400px;
+  width: 200px;
+}
+
+.container-3 .inner-child {
+  height: 200px;
+}
+
+.container-6 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-6 .child:nth-child(1) {
+  width: 600px;
+  height: 300px;
+}
+.split-window {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 300px;
+}
+.split-child .child:nth-child(1),
+.split-child .child:nth-child(2) {
+  width: 150px;
+  height: 100px;
+}
+.split-child .child:nth-child(3) {
+  width: 200px;
+  height: 150px;
+}
+.container-6 .child:nth-child(3),
+.container-6 .child:nth-child(4) {
+  width: 200px;
+  height: 300px;
+}
+
+.container-6 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.container-6 .child:nth-child(1) {
+  width: 600px;
+  height: 300px;
+}
+.inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 300px;
+}
+.inner-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 200px;
+  height: 300px;
+}
+.inner-container1-child-1,
+.inner-container1-child-2 {
+  width: 100px;
+  height: 150px;
+}
+.inner-container1-child-3 {
+  width: 200px;
+  height: 150px;
+}
+
+.container-6 .child:nth-child(5) {
+  width: 200px;
+  height: 300px;
+}
+.container-6 .child:nth-child(3),
+.container-6 .child:nth-child(4) {
+  width: 200px;
+  height: 300px;
+}
+
+
+
+
+.containers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.blueone{
+  background-color: rgba(8, 8, 244, 0.707);
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 45px;
+  text-align: center;
+  display: flex;
+  justify-content: center
+}
+.blin{
+  background-color: rgba(8, 8, 244, 0.186);
+  width: 150px;
+  height: 150px;
+  border-radius: 180px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.1);
+}

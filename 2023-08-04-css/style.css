@@ -1,0 +1,132 @@
+/* 
+
+selector {
+  property: value;
+}
+
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin-bottom: 500px;
+}
+
+h1 {
+  background-color: rgb(21, 0, 255);
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  color: red;
+  font-size: 30px;
+}
+
+#paragraph {
+  background-color: aquamarine;
+}
+
+.custom-paragraph {
+  background-color: blueviolet;
+  color: white;
+}
+
+.box {
+  background-color: bisque;
+}
+
+ul li {
+  font-size: 20px;
+}
+
+ol span {
+  font-weight: bold;
+}
+
+.custom-paragraph span {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.color-red {
+  color: red;
+}
+
+li.color-red {
+  color: rgb(0, 125, 35);
+}
+
+
+h4 {
+  /* BORDER */
+
+  /* border-top-style: dashed;
+  border-right-style: double;
+  border-bottom-style: solid;
+  border-left-style: dotted; */
+
+
+  /* border-style: dashed; */
+  /* border-style: dashed solid; */
+  /* border-style: dashed double solid; */
+
+  /* border-style: dashed double solid dotted; */
+
+  /* border-top-color: green;
+  border-right-color: red;
+  border-bottom-color: violet;
+  border-left-color: blue; */
+
+  border-color: green red violet blue;
+
+  /* border-top-width: 10px;
+  border-right-width: 15px;
+  border-bottom-width: 30px;
+  border-left-width: 5px; */
+
+  border-width: 10px 15px 30px 5px;
+
+  border: 10px solid green;
+
+  /* MARGIN */
+  /* margin-top: 10px;
+  margin-right: 50px;
+  margin-bottom: 5px;
+  margin-left: 15px; */
+
+  margin: 10px 50px 5px 15px;
+
+  /* PADDING */
+  /* padding-top: 10px;
+  padding-right: 50px;
+  padding-bottom: 15px;
+  padding-left: 30px; */
+
+  padding: 10px 50px 15px 30px;
+
+  /* BORDER RADIUS */
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 0; */
+
+  border-radius: 10px 30px 15px 0;
+
+  /* TEXT-TRANSFORM */
+  text-transform: uppercase;
+
+  /* TEXT-DECORATION */
+  /* text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: green;
+  text-decoration-thickness: 3px; */
+
+  text-decoration: underline wavy green 3px;
+}
+
+h5 {
+  text-shadow: 2px 2px 2px black;
+}

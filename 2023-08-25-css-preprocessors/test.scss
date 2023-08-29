@@ -1,0 +1,10 @@
+@mixin card($padding: 0, $border-radius: 0, $bg: transparent, $color: black) {
+  padding: $padding;
+  border-radius: $border-radius;
+  background-color: $bg;
+  color: $color;
+}
+
+div {
+  @include card(15px, 20px, black, red)
+}

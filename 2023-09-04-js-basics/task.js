@@ -132,45 +132,124 @@ if (isNaN(age)) {
   console.log('Įvestas amžius yra per didelis')
 } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ŽAIDIMAS
 
+// PIRMAS LYGIS
 // Artimiausia nuo Žemės esanti Žvaigždė?
 let correctAnswer11 = 'sun'
-let playerAnswer11 = 'sun'
+let playerAnswer11 = 'moon'
 
 // 123 + 456 = 579
 let correctAnswer12 = 579
-let playerAnswer12 = 4546
+let playerAnswer12 = 444
 
-// console.log(correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12)
-// console.log(correctAnswer11 === playerAnswer11 || correctAnswer12 === playerAnswer12)
+// if (correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12) {
+//   console.log('Patekai i kita lygi: abu atsakymai teisingi.')
+// } else if (correctAnswer11 !== playerAnswer11 && correctAnswer12 === playerAnswer12) {
+//   console.log('Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
+// } else if (correctAnswer11 === playerAnswer11 && correctAnswer12 !== playerAnswer12) {
+//   console.log('Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
+// } else if (correctAnswer11 !== playerAnswer11 && correctAnswer12 !== playerAnswer12) {
+//   console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
+// }
+
+if (correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12) {
+  console.log('Patekai i kita lygi: abu atsakymai teisingi.')
+} else if (correctAnswer12 === playerAnswer12) {
+  console.log('Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
+} else if (correctAnswer11 === playerAnswer11) {
+  console.log('Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
+} else {
+  console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
+}
+
+
+
+// ANTRAS LYGIS
+let correctAnswer21 = 1
+let correctAnswer22 = 1
+
+let playerAnswer21 = 1
+let playerAnswer22 = 1
+
+// 1. Patekai i kita lygi: abu atsakymai teisingi.
+// 2. Nepatekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.
+// 3. Nepatekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.
+// 4. Nepatekai i kita lygi: abu atsakymai buvo neteisingi.
+
+if (correctAnswer21 === playerAnswer21 && correctAnswer22 === playerAnswer22) {
+  console.log('Patekai i kita lygi: abu atsakymai teisingi.')
+} else if (correctAnswer22 === playerAnswer22) {
+  console.log('Nepatekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
+} else if (correctAnswer21 === playerAnswer21) {
+  console.log('Nepatekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
+} else {
+  console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
+}
+
+
+// TREČIAS LYGIS
+let correctAnswer31 = 1
+let correctAnswer32 = 1
+let correctAnswer33 = 1
+
+let playerAnswer31 = 0
+let playerAnswer32 = 0
+let playerAnswer33 = 0
+
+// if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Patekai: visi teisingi')
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Patekai: bet trečias neteisingas')
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Patekai: bet antras neteisingas')
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Patekai: bet pirmas neteisingas')
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Nepatekai: bet pirmas teisingas')
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Nepatekai: bet antras teisingas')
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Nepatekai: bet trečias teisingas')
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Nepatekai: visi neteisingi :(')
+// }
+
+let answer31 = correctAnswer31 === playerAnswer31
+let answer32 = correctAnswer32 === playerAnswer32
+let answer33 = correctAnswer33 === playerAnswer33
+
+let output = ''
+
+if (answer31 && answer32 && answer33) {
+  output = 'Patekai: visi teisingi'
+} else if (answer31 && answer32) {
+  output = 'Patekai: bet trečias neteisingas'
+} else if (answer31 && answer33) {
+  output = 'Patekai: bet antras neteisingas'
+} else if (answer32 && answer33) {
+  output = 'Patekai: bet pirmas neteisingas'
+} else if (answer31) {
+  output = 'Nepatekai: bet pirmas teisingas'
+} else if (answer32) {
+  output = 'Nepatekai: bet antras teisingas'
+} else if (answer33) {
+  output = 'Nepatekai: bet trečias teisingas'
+} else {
+  output = 'Nepatekai: visi neteisingi :('
+}
+
+console.log(output)
+
+
+
+
+
+
+
+
+
+
 
 
 // PASISVEIKINIMAS

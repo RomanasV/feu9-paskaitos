@@ -242,18 +242,122 @@ if (answer31 && answer32 && answer33) {
 console.log(output)
 
 
-
-
-
-
-
-
-
-
-
+// PASISVEIKINIMAS:
+// 1. Jeigu vartotojas prisijungęs (true/false), tai prie pasisveikinimo reikia prirašyti jo vardą, pvz. „Good Morning, Tom.".
+// 2. Jeigu vartotojas nėra prisijungęs, tai išvesti tik tekstą „Good Morning".
+// 3. Priklausomai nuo paros laiko, pasisveikinimas turėtų būti skirtingas:
+// 3.1. 5-12 val. „Good Morning"
+// 3.2. 13-18 val. „Good Afternoon"
+// 3.3. 19-4 val. „Good Evening"
+// 4. Jeigu vartotojas yra ir prisijungęs, ir šiandien yra jo gimtadienis, tai prie pasisveikinimo dar turi būti parašytas ir pasveikinimas, pvz.: „Good Morning, Tom and have a great birthday!"
 
 // PASISVEIKINIMAS
-let isLoggedIn = false
+// let isLoggedIn = true
+// let userName = 'John'
+// let time = 4
+// let isBirthday = true
+
+// if (time >= 5 && time < 13) {
+
+//   if (isLoggedIn) {
+//     if (isBirthday) {
+//       console.log('Good Morning, ' + userName + ' and have a great birthday!')
+//     } else {
+//       console.log('Good Morning, ' + userName)
+//     }
+//   } else {
+//     console.log('Good Morning')
+//   }
+
+// } else if (time >= 13 && time < 19) {
+
+//   if (isLoggedIn) {
+//     if (isBirthday) {
+//       console.log('Good Afternoon, ' + userName + ' and have a great birthday!')
+//     } else {
+//       console.log('Good Afternoon, ' + userName)
+//     }
+//   } else {
+//     console.log('Good Afternoon')
+//   }
+
+// } else if ((time >= 19 && time < 24) || (time >= 0 && time < 5)) {
+
+//   if (isLoggedIn) {
+//     if (isBirthday) {
+//       console.log('Good Evening, ' + userName + ' and have a great birthday!')
+//     } else {
+//       console.log('Good Evening, ' + userName)
+//     }
+//   } else {
+//     console.log('Good Evening')
+//   }
+
+// } else {
+
+//   if (isLoggedIn) {
+//     if (isBirthday) {
+//       console.log('Hello, ' + userName + ' and have a great birthday!')
+//     } else {
+//       console.log('Hello, ' + userName)
+//     }
+//   } else {
+//     console.log('Hello')
+//   }
+
+// }
+
+// let isLoggedIn = true
+// let userName = 'John'
+// let time = 220
+// let isBirthday = false
+
+// let greetingText = ''
+
+// if (time >= 5 && time < 13) {
+//   greetingText = 'Good Morning'
+// } else if (time >= 13 && time < 19) {
+//   greetingText = 'Good Afternoon'
+// } else if ((time >= 19 && time < 24) || (time >= 0 && time < 5)) {
+//   greetingText = 'Good Evening'
+// } else {
+//   greetingText = 'Hello'
+// }
+
+// let nameText = ''
+// if (isLoggedIn && userName) {
+//   nameText = `, ${userName}`
+// }
+
+// let birthdayText = '.'
+// if (isLoggedIn && isBirthday) {
+//   birthdayText = ' and have a great birthday!'
+// }
+
+// let greetingOutput = greetingText + nameText + birthdayText
+
+// console.log(greetingOutput)
+
+
+let isLoggedIn = true
 let userName = 'John'
-let time = 16
+let time = 220
 let isBirthday = false
+
+let greetingText = ''
+let nameText = (isLoggedIn && userName) ? `, ${userName}` : ''
+let birthdayText = (isLoggedIn && isBirthday) ? ' and have a great birthday!' : '.'
+
+if (time >= 5 && time < 13) {
+  greetingText = 'Good Morning'
+} else if (time >= 13 && time < 19) {
+  greetingText = 'Good Afternoon'
+} else if ((time >= 19 && time < 24) || (time >= 0 && time < 5)) {
+  greetingText = 'Good Evening'
+} else {
+  greetingText = 'Hello'
+}
+
+let greetingOutput = greetingText + nameText + birthdayText
+
+console.log(greetingOutput)

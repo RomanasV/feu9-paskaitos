@@ -2,24 +2,22 @@ function checkPassword(originalPassword) {
   let password = originalPassword.trim()
   let passwordLength = password.length
   
-  let output = ''
-
   if (!password.includes('#')) {
-    output = 'Slaptažodis privalo turėti grotažymes'
-  } else if (passwordLength < 16) {
-    output = 'Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.'
-  } else if (passwordLength < 21) {
-    output = 'Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.'
-  } else {
-    output = 'Slaptažodis tinkamas'
+    return 'Slaptažodis privalo turėti grotažymes'
   }
   
-  return output
+  if (passwordLength < 16) {
+    return 'Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.'
+  }
   
-  console.log('gsdjgdkjfg')
+  if (passwordLength < 21) {
+    return 'Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.'
+  }
+  
+  return 'Slaptažodis tinkamas'
 }
 
-console.log(checkPassword('afjhslfksjdlkfsdgj'))
+// console.log(checkPassword('afjhslfksjdlkfsdgj'))
 // alert(checkPassword('afjhslfksj#dlkfsdgj'))
 // document.querySelector('h1').textContent = checkPassword('gskjfksdjhfkljdfkj')
 // let passwordAnswer = 'Slaptažodžio statusas: ' + checkPassword('sjkfkdjfg')
@@ -31,35 +29,51 @@ console.log(checkPassword('afjhslfksjdlkfsdgj'))
 
 
 function checkAge(age) {
-  let output = ''
-
   if (isNaN(age)) {
-    output = 'Netinkamai nurodytas amžius, amžius privalo būti skaičius.'
-  } else if (age < 0) {
-    output = 'Įvestas amžius yra per mažas'
-  } else if (age < 6) {
-    output = 'Į mokyklą neina'
-  } else if (age < 7) {
-    output = 'Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.'
-  } else if (age < 10) {
-    output = 'Pradinukas'
-  } else if (age < 11) {
-    output = 'Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.'
-  } else if (age < 14) {
-    output = 'Pagrindinė'
-  } else if (age < 15) {
-    output = 'Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.'
-  } else if (age < 18) {
-    output = 'Gimnazija'
-  } else if (age < 19) {
-    output = 'Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.'
-  } else if (age < 120) {
-    output = 'Mokyklą baigė'
-  } else {
-    output = 'Įvestas amžius yra per didelis'
-  } 
-
-  return output
+    return 'Netinkamai nurodytas amžius, amžius privalo būti skaičius.'
+  }
+  
+  if (age < 0) {
+    return 'Įvestas amžius yra per mažas'
+  }
+  
+  if (age < 6) {
+    return 'Į mokyklą neina'
+  }
+  
+  if (age < 7) {
+    return 'Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.'
+  }
+  
+  if (age < 10) {
+    return 'Pradinukas'
+  }
+  
+  if (age < 11) {
+    return 'Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.'
+  }
+  
+  if (age < 14) {
+    return 'Pagrindinė'
+  }
+  
+  if (age < 15) {
+    return 'Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.'
+  }
+  
+  if (age < 18) {
+    return 'Gimnazija'
+  }
+  
+  if (age < 19) {
+    return 'Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.'
+  }
+  
+  if (age < 120) {
+    return 'Mokyklą baigė'
+  }
+  
+  return 'Įvestas amžius yra per didelis'
 }
 
 // console.log(checkAge(15))
@@ -146,25 +160,31 @@ function thirdGameLevel() {
   alert(output)
 }
 
-function greeting(time, isLoggedIn = false, userName = '', isBirthday = false) {
-  let greetingText = ''
+function getGreetingText(time) {
+  if (time >= 5 && time < 13) {
+    return 'Good Morning'
+  }
+  
+  if (time >= 13 && time < 19) {
+    return 'Good Afternoon'
+  }
+  
+  if ((time >= 19 && time < 24) || (time >= 0 && time < 5)) {
+    return 'Good Evening'
+  }
+  
+  return 'Hello'
+}
+
+function greeting(initialTime, isLoggedIn = false, userName = '', isBirthday = false) {
+  let greetingText = getGreetingText(initialTime)
   let nameText = (isLoggedIn && userName) ? `, ${userName}` : ''
   let birthdayText = (isLoggedIn && isBirthday) ? ' and have a great birthday!' : '.'
-  
-  if (time >= 5 && time < 13) {
-    greetingText = 'Good Morning'
-  } else if (time >= 13 && time < 19) {
-    greetingText = 'Good Afternoon'
-  } else if ((time >= 19 && time < 24) || (time >= 0 && time < 5)) {
-    greetingText = 'Good Evening'
-  } else {
-    greetingText = 'Hello'
-  }
   
   let greetingOutput = greetingText + nameText + birthdayText
   
   return greetingOutput
 }
 
-// console.log(greeting(20, true, 'John', true))
+console.log(greeting(20, true, 'John', true))
 // document.querySelector('h1').textContent = greeting(14)

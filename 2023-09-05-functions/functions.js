@@ -186,5 +186,5 @@ function greeting(initialTime, isLoggedIn = false, userName = '', isBirthday = f
   return greetingOutput
 }
 
-// console.log(greeting(20, true, 'John', true))
+console.log(greeting(20, true, 'John', true))
 // document.querySelector('h1').textContent = greeting(14)

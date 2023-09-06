@@ -2,19 +2,29 @@ function checkPassword(originalPassword) {
   let password = originalPassword.trim()
   let passwordLength = password.length
   
+  let output = ''
+
   if (!password.includes('#')) {
-    console.log('Slaptažodis privalo turėti grotažymes')
+    output = 'Slaptažodis privalo turėti grotažymes'
   } else if (passwordLength < 16) {
-    console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.')
+    output = 'Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.'
   } else if (passwordLength < 21) {
-    console.log('Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.')
+    output = 'Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.'
   } else {
-    console.log('Slaptažodis tinkamas')
+    output = 'Slaptažodis tinkamas'
   }
+
+  console.log(output)
 }
 
-// checkPassword('fasfsfsdfsdf')
-// checkPassword('fsdfjkshdfkjhsdj#dasdsad')
+checkPassword('fasfsfsdfsdf')
+
+
+
+
+
+
+
 
 function checkAge(age) {
   if (isNaN(age)) {
@@ -48,49 +58,62 @@ function checkAge(age) {
 // checkAge(100)
 // checkAge('labas')
 
-function firstGameLevel(playerAnswer1, playerAnswer2) {
+
+
+function firstGameLevel() {
   let correctAnswer1 = 'sun'
   let correctAnswer2 = 579
+
+  let playerAnswer1 = prompt('Arčiausiai Žemės esanti žvaigždė')
+  let playerAnswer2 = prompt('123 + 456?')
   
-  if (correctAnswer1 === playerAnswer1 && correctAnswer2 === playerAnswer2) {
-    console.log('Patekai i kita lygi: abu atsakymai teisingi.')
-  } else if (correctAnswer2 === playerAnswer2) {
-    console.log('Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
-  } else if (correctAnswer1 === playerAnswer1) {
-    console.log('Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
+  if (correctAnswer1 == playerAnswer1 && correctAnswer2 == playerAnswer2) {
+    alert('Patekai i kita lygi: abu atsakymai teisingi.')
+    secondGameLevel()
+  } else if (correctAnswer2 == playerAnswer2) {
+    alert('Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
+    secondGameLevel()
+  } else if (correctAnswer1 == playerAnswer1) {
+    alert('Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
+    secondGameLevel()
   } else {
-    console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
+    alert('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
   }
 }
 
-// firstGameLevel('moon', 444)
-// firstGameLevel('sun', 579)
+// firstGameLevel()
 
-function secondGameLevel(playerAnswer1, playerAnswer2) {
+function secondGameLevel() {
   let correctAnswer1 = 1
   let correctAnswer2 = 1
+
+  let playerAnswer1 = prompt('Antras lygis, pirmas klausimas')
+  let playerAnswer2 = prompt('Antras lygis, antras klausimas')
   
-  if (correctAnswer1 === playerAnswer1 && correctAnswer2 === playerAnswer2) {
-    console.log('Patekai i kita lygi: abu atsakymai teisingi.')
-  } else if (correctAnswer2 === playerAnswer2) {
-    console.log('Nepatekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
-  } else if (correctAnswer1 === playerAnswer1) {
-    console.log('Nepatekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
+  if (correctAnswer1 == playerAnswer1 && correctAnswer2 == playerAnswer2) {
+    alert('Patekai i kita lygi: abu atsakymai teisingi.')
+    thirdGameLevel()
+  } else if (correctAnswer2 == playerAnswer2) {
+    alert('Nepatekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.')
+  } else if (correctAnswer1 == playerAnswer1) {
+    alert('Nepatekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.')
   } else {
-    console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
+    alert('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.')
   }
 }
 
-// secondGameLevel(1, 1)
-
-function thirdGameLevel(playerAnswer1, playerAnswer2, playerAnswer3) {
+function thirdGameLevel() {
   let correctAnswer1 = 1
   let correctAnswer2 = 1
   let correctAnswer3 = 1
 
-  let answer1 = correctAnswer1 === playerAnswer1
-  let answer2 = correctAnswer2 === playerAnswer2
-  let answer3 = correctAnswer3 === playerAnswer3
+  let playerAnswer1 = prompt('Trečias lygis, pirmas klausimas')
+  let playerAnswer2 = prompt('Trečias lygis, antras klausimas')
+  let playerAnswer3 = prompt('Trečias lygis, trečias klausimas')
+
+  let answer1 = correctAnswer1 == playerAnswer1
+  let answer2 = correctAnswer2 == playerAnswer2
+  let answer3 = correctAnswer3 == playerAnswer3
 
   let output = ''
 
@@ -112,10 +135,8 @@ function thirdGameLevel(playerAnswer1, playerAnswer2, playerAnswer3) {
     output = 'Nepatekai: visi neteisingi :('
   }
 
-  console.log(output)
+  alert(output)
 }
-
-// thirdGameLevel(1, 1, 1)
 
 function greeting(time, isLoggedIn = false, userName = '', isBirthday = false) {
   let greetingText = ''
@@ -137,6 +158,6 @@ function greeting(time, isLoggedIn = false, userName = '', isBirthday = false) {
   console.log(greetingOutput)
 }
 
-greeting(20, true, 'John', true)
-greeting(14)
-greeting(14, true, 'Steve')
+// greeting(20, true, 'John', true)
+// greeting(14)
+// greeting(14, true, 'Steve')

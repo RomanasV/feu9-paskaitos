@@ -13,13 +13,17 @@ function checkPassword(originalPassword) {
   } else {
     output = 'Slaptažodis tinkamas'
   }
-
-  console.log(output)
+  
+  return output
+  
+  console.log('gsdjgdkjfg')
 }
 
-checkPassword('fasfsfsdfsdf')
-
-
+console.log(checkPassword('afjhslfksjdlkfsdgj'))
+// alert(checkPassword('afjhslfksj#dlkfsdgj'))
+// document.querySelector('h1').textContent = checkPassword('gskjfksdjhfkljdfkj')
+// let passwordAnswer = 'Slaptažodžio statusas: ' + checkPassword('sjkfkdjfg')
+// console.log(passwordAnswer)
 
 
 
@@ -27,36 +31,40 @@ checkPassword('fasfsfsdfsdf')
 
 
 function checkAge(age) {
+  let output = ''
+
   if (isNaN(age)) {
-    console.log('Netinkamai nurodytas amžius, amžius privalo būti skaičius.')
+    output = 'Netinkamai nurodytas amžius, amžius privalo būti skaičius.'
   } else if (age < 0) {
-    console.log('Įvestas amžius yra per mažas')
+    output = 'Įvestas amžius yra per mažas'
   } else if (age < 6) {
-    console.log('Į mokyklą neina')
+    output = 'Į mokyklą neina'
   } else if (age < 7) {
-    console.log('Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.')
+    output = 'Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.'
   } else if (age < 10) {
-    console.log('Pradinukas')
+    output = 'Pradinukas'
   } else if (age < 11) {
-    console.log('Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.')
+    output = 'Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.'
   } else if (age < 14) {
-    console.log('Pagrindinė')
+    output = 'Pagrindinė'
   } else if (age < 15) {
-    console.log('Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.')
+    output = 'Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.'
   } else if (age < 18) {
-    console.log('Gimnazija')
+    output = 'Gimnazija'
   } else if (age < 19) {
-    console.log('Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.')
+    output = 'Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.'
   } else if (age < 120) {
-    console.log('Mokyklą baigė')
+    output = 'Mokyklą baigė'
   } else {
-    console.log('Įvestas amžius yra per didelis')
+    output = 'Įvestas amžius yra per didelis'
   } 
+
+  return output
 }
 
-// checkAge(15)
-// checkAge(100)
-// checkAge('labas')
+// console.log(checkAge(15))
+// document.querySelector('h1').textContent = checkAge(100)
+// console.log(checkAge('labas'))
 
 
 
@@ -155,9 +163,8 @@ function greeting(time, isLoggedIn = false, userName = '', isBirthday = false) {
   
   let greetingOutput = greetingText + nameText + birthdayText
   
-  console.log(greetingOutput)
+  return greetingOutput
 }
 
-// greeting(20, true, 'John', true)
-// greeting(14)
-// greeting(14, true, 'Steve')
+// console.log(greeting(20, true, 'John', true))
+// document.querySelector('h1').textContent = greeting(14)

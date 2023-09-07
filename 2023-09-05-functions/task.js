@@ -236,3 +236,6 @@ function getSymbol(str, num) {
 console.log(getSymbol('sveikas', 1))
 
 console.log(getSymbol('sveikas', 'labas'))
+console.log(getSymbol(5, 5))
+console.log(getSymbol('labas'))
+console.log(getSymbol())

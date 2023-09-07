@@ -70,3 +70,20 @@ getPerimeter(10, 30, 'm')
 getPerimeter(10, 35)
 getPerimeter(10, 45, 'km')
 getPerimeter(10, 55, 'dm')
+
+let num = 5
+console.log(num)
+
+function func(globalNum) {
+  let num = 6
+  console.log(num)
+  console.log(globalNum)
+
+  if (true) {
+    let num1 = 10
+    console.log(num1)
+    console.log(num)
+  }
+}
+
+func(num)

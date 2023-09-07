@@ -2,7 +2,8 @@
 // 1.1. Funkcija priima vieną parametrą: žmogaus amžius.
 // 1.2. Funkcija grąžina atsakymą tokiu formatu: 5 žmogaus metai yra 35 šuns metai.
 
-function humanToDogYears(humanYears) {
+function humanToDogYears() {
+  let humanYears = 25
   let dogYears = humanYears * 7
   let output = `${humanYears} šuns metai yra ${dogYears} žmogaus metai.`
   return output

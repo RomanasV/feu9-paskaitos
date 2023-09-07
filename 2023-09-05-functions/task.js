@@ -200,6 +200,18 @@ console.log(checkText('labas'))
 // 11.4. Patobulinti funkciją, kad būtų galima įrašyti neigiamą skaičių, jeigu norima gauti teksto simbolį skaičiuojant nuo jo galo, o ne nuo priekio.
 
 function getSymbol(str, num) {
+  if (!str || !num) {
+    return 'Neteisingai įvesti duomenys'
+  }
+
+  if (typeof str !== 'string') {
+    return 'ERROR: pirmas parametras privalo būti tekstas (string)'
+  }
+
+  if (isNaN(num)) {
+    return 'ERROR: antras parametras privalo būti skaičius (number)'
+  }
+
   if (num === 0) {
     return 'Reikia įvesti arba teigiamą, arba neigiamą skaičių'
   }
@@ -239,3 +251,4 @@ console.log(getSymbol('sveikas', 'labas'))
 console.log(getSymbol(5, 5))
 console.log(getSymbol('labas'))
 console.log(getSymbol())
+console.log(getSymbol('labas', 5))

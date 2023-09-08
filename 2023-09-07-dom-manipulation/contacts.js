@@ -1,8 +1,19 @@
 let container = document.querySelector('.container')
+container.style.maxWidth = '1200px'
+container.style.marginRight = 'auto'
+container.style.marginLeft = 'auto'
 
 let contentWrapper = document.createElement('div')
 contentWrapper.classList.add('content-wrapper')
 container.append(contentWrapper)
+// contentWrapper.style.display = 'grid'
+// contentWrapper.style.gridTemplateColumns = '1fr 1fr'
+// contentWrapper.style.gap = '30px'
+
+contentWrapper.style = `display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 30px;`
+
 
 let shopsWrapper = document.createElement('div')
 shopsWrapper.classList.add('shops-wrapper')
@@ -16,6 +27,9 @@ pageTitle.textContent = 'Find us'
 let shopsList = document.createElement('div')
 shopsList.classList.add('shops-list')
 // shopsWrapper.append(shopsList)
+shopsList.style = `display: grid;
+                   grid-template-columns: 1fr 1fr;
+                   gap: 15px;`
 
 shopsWrapper.append(pageTitle, shopsList)
 

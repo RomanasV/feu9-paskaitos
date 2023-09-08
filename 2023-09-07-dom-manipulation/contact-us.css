@@ -2,24 +2,24 @@
   box-sizing: border-box;
 }
 
-.container {
+/* .container {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-}
+} */
 
-.content-wrapper {
+/* .content-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-}
+} */
 
-
+/* 
 .shops-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-}
+} */
 
 .shop-item {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
@@ -51,7 +51,7 @@ ul.shop-contacts-list {
   width: 100%;
 }
 
-@media (max-width: 999px) {
+/* @media (max-width: 999px) {
   .content-wrapper {
     grid-template-columns: 3fr 2fr;
   }
@@ -85,4 +85,4 @@ ul.shop-contacts-list {
   .shops-list {
     grid-template-columns: 1fr;
   }
-}
+} */

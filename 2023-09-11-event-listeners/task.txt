@@ -8,3 +8,24 @@ Užduotis:
 
 7. Jeigu skaitmuo h3 komponente yra mažesnis už du, tai „-" mygtukas turėtų patapti neveiksnus (disabled)- element.setAttribute('disabled', true) / element.removeAttribute('disabled')
 8. Jeigu skaitmuo h3 komponente yra 10, tai „+" mygtukas turėtų patapti neveiksnus (disabled)
+
+9. Jeigu skaitmuo yra 5 arba daugiau, tai jo spalva turėtų būti žalia. Kitu atveju - raudona.
+
+10. Sukurti naują mygtuką „Reset". Jį paspaudus viskas atstatoma į pradinę padėtį.
+
+11. Sukurti du naujus mygtukus, kurie:
+11.1. Prideda dvejetą prie esamos h3 elemento reikšmės.
+11.2. Atima dvejetą iš esamos h3 elemento reikšmės.
+
+12. Sukurti input elementą (number tipo) ir jame įrašytą skaičių pridėti kaip h3 elemento tekstą.
+
+13. Sukurti naują elementą (h4) ir jį pridėti į „numbers" elemento pabaigą.
+13.1. Šio elemento tekstas turėtų būti „Balai:"
+14. Sukurti naują elementą (ul) ir jį pridėti į „numbers" elemento pabaigą.
+14.1. Sukurti naują mygtuką, kurio teksta būtų „Įrašyti balą".
+14.2. Paspaudus šį mygtuką, reikia paimti reikšmę iš h3 elemento ir sukurti naują li elementą bei jį prepend'inti prie ul elemento.
+
+15. Į li elementą įrašytas balas turi būti tos pačios spalvos kaip ir h3 elemente.
+
+16.1. Sukurti mygtuką ir jį įdėti į li elementą.
+16.2. Paspaudus šį mygtuką, li elementas su balu turi būti ištrintas.

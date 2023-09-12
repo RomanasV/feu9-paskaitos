@@ -22,18 +22,22 @@
 let numbersWrapper = document.querySelector('#numbers')
 
 let numberDisplay = document.createElement('h3')
+let minus5Button = document.createElement('button')
 let minus2Button = document.createElement('button')
 let minusButton = document.createElement('button')
 let plusButton = document.createElement('button')
 let plus2Button = document.createElement('button')
+let plus5Button = document.createElement('button')
 let resetButton = document.createElement('button')
 let input = document.createElement('input')
 
 numberDisplay.textContent = 5
+minus5Button.textContent = '-5'
 minus2Button.textContent = '-2'
 minusButton.textContent = '-'
 plusButton.textContent = '+'
 plus2Button.textContent = '+2'
+plus5Button.textContent = '+5'
 resetButton.textContent = 'Reset'
 
 input.value = 5
@@ -44,11 +48,13 @@ input.max = 10
 
 numberDisplay.style.color = 'green'
 
+minus5Button.setAttribute('disabled', true)
+
 // numbersWrapper.append(numberDisplay)
 // numbersWrapper.append(minusButton)
 // numbersWrapper.append(plusButton)
 
-numbersWrapper.append(input, numberDisplay, minus2Button, minusButton, resetButton, plusButton, plus2Button)
+numbersWrapper.append(input, numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button)
 
 
 minusButton.addEventListener('click', function() {
@@ -62,6 +68,10 @@ minusButton.addEventListener('click', function() {
   if (numberDisplay.textContent <= 2) {
     minus2Button.setAttribute('disabled', true)
   }
+  
+  if (numberDisplay.textContent <= 5) {
+    minus5Button.setAttribute('disabled', true)
+  }
 
   if (numberDisplay.textContent < 10) {
     plusButton.removeAttribute('disabled')
@@ -69,6 +79,10 @@ minusButton.addEventListener('click', function() {
 
   if (numberDisplay.textContent < 9) {
     plus2Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent < 6) {
+    plus5Button.removeAttribute('disabled')
   }
 
   if (numberDisplay.textContent >= 5) {
@@ -89,6 +103,10 @@ minus2Button.addEventListener('click', function() {
   if (numberDisplay.textContent <= 2) {
     minus2Button.setAttribute('disabled', true)
   }
+  
+  if (numberDisplay.textContent <= 5) {
+    minus5Button.setAttribute('disabled', true)
+  }
 
   if (numberDisplay.textContent < 10) {
     plusButton.removeAttribute('disabled')
@@ -96,6 +114,45 @@ minus2Button.addEventListener('click', function() {
   
   if (numberDisplay.textContent < 9) {
     plus2Button.removeAttribute('disabled')
+  }
+  
+  if (numberDisplay.textContent < 6) {
+    plus5Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    numberDisplay.style.color = 'green'
+  } else {
+    numberDisplay.style.color = 'red'
+  }
+})
+
+minus5Button.addEventListener('click', function() {
+  numberDisplay.textContent = numberDisplay.textContent - 5
+  input.value = numberDisplay.textContent
+
+  if (numberDisplay.textContent <= 1) {
+    minusButton.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent <= 2) {
+    minus2Button.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent <= 5) {
+    minus5Button.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent < 10) {
+    plusButton.removeAttribute('disabled')
+  }
+  
+  if (numberDisplay.textContent < 9) {
+    plus2Button.removeAttribute('disabled')
+  }
+  
+  if (numberDisplay.textContent < 6) {
+    plus5Button.removeAttribute('disabled')
   }
 
   if (numberDisplay.textContent >= 5) {
@@ -116,6 +173,10 @@ plusButton.addEventListener('click', function() {
   if (numberDisplay.textContent >= 9) {
     plus2Button.setAttribute('disabled', true)
   }
+  
+  if (numberDisplay.textContent >= 5) {
+    plus5Button.setAttribute('disabled', true)
+  }
 
   if (numberDisplay.textContent > 1) {
     minusButton.removeAttribute('disabled')
@@ -123,6 +184,10 @@ plusButton.addEventListener('click', function() {
 
   if (numberDisplay.textContent > 2) {
     minus2Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent > 5) {
+    minus5Button.removeAttribute('disabled')
   }
 
   if (numberDisplay.textContent >= 5) {
@@ -143,6 +208,10 @@ plus2Button.addEventListener('click', function() {
   if (numberDisplay.textContent >= 9) {
     plus2Button.setAttribute('disabled', true)
   }
+  
+  if (numberDisplay.textContent >= 5) {
+    plus5Button.setAttribute('disabled', true)
+  }
 
   if (numberDisplay.textContent > 1) {
     minusButton.removeAttribute('disabled')
@@ -150,6 +219,45 @@ plus2Button.addEventListener('click', function() {
 
   if (numberDisplay.textContent > 2) {
     minus2Button.removeAttribute('disabled')
+  }
+  
+  if (numberDisplay.textContent > 5) {
+    minus5Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    numberDisplay.style.color = 'green'
+  } else {
+    numberDisplay.style.color = 'red'
+  }
+})
+
+plus5Button.addEventListener('click', function() {
+  numberDisplay.textContent = Number(numberDisplay.textContent) + 5
+  input.value = numberDisplay.textContent
+
+  if (numberDisplay.textContent >= 10) {
+    plusButton.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent >= 9) {
+    plus2Button.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    plus5Button.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent > 1) {
+    minusButton.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent > 2) {
+    minus2Button.removeAttribute('disabled')
+  }
+  
+  if (numberDisplay.textContent > 5) {
+    minus5Button.removeAttribute('disabled')
   }
 
   if (numberDisplay.textContent >= 5) {
@@ -170,8 +278,10 @@ resetButton.addEventListener('click', function() {
 
   plusButton.removeAttribute('disabled')
   plus2Button.removeAttribute('disabled')
+  plus5Button.removeAttribute('disabled')
   minusButton.removeAttribute('disabled')
   minus2Button.removeAttribute('disabled')
+  minus5Button.removeAttribute('disabled')
 })
 
 

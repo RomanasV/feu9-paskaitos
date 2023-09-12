@@ -9,48 +9,170 @@
 // 7. Jeigu skaitmuo h3 komponente yra mažesnis už du, tai „-" mygtukas turėtų patapti neveiksnus (disabled)- element.setAttribute('disabled', true) / element.removeAttribute('disabled')
 // 8. Jeigu skaitmuo h3 komponente yra 10, tai „+" mygtukas turėtų patapti neveiksnus (disabled)
 
+// 9. Jeigu skaitmuo yra 5 arba daugiau, tai jo spalva turėtų būti žalia. Kitu atveju - raudona.
+
+// 10. Sukurti naują mygtuką „Reset". Jį paspaudus viskas atstatoma į pradinę padėtį.
+
+// 11. Sukurti du naujus mygtukus, kurie:
+// 11.1. Prideda dvejetą prie esamos h3 elemento reikšmės.
+// 11.2. Atima dvejetą iš esamos h3 elemento reikšmės.
+
+// 12. Sukurti input elementą (number tipo) ir jame įrašytą skaičių pridėti kaip h3 elemento tekstą.
+
 let numbersWrapper = document.querySelector('#numbers')
 
 let numberDisplay = document.createElement('h3')
+let minus2Button = document.createElement('button')
 let minusButton = document.createElement('button')
 let plusButton = document.createElement('button')
+let plus2Button = document.createElement('button')
+let resetButton = document.createElement('button')
+let input = document.createElement('input')
 
 numberDisplay.textContent = 5
+minus2Button.textContent = '-2'
 minusButton.textContent = '-'
 plusButton.textContent = '+'
+plus2Button.textContent = '+2'
+resetButton.textContent = 'Reset'
+
+input.value = 5
+input.type = 'number'
+// input.setAttribute('type', 'number')
+input.min = 1
+input.max = 10
+
+numberDisplay.style.color = 'green'
 
 // numbersWrapper.append(numberDisplay)
 // numbersWrapper.append(minusButton)
 // numbersWrapper.append(plusButton)
 
-numbersWrapper.append(numberDisplay, minusButton, plusButton)
+numbersWrapper.append(input, numberDisplay, minus2Button, minusButton, resetButton, plusButton, plus2Button)
 
 
 minusButton.addEventListener('click', function() {
   numberDisplay.textContent = numberDisplay.textContent - 1
+  input.value = numberDisplay.textContent
 
   if (numberDisplay.textContent <= 1) {
     minusButton.setAttribute('disabled', true)
   }
 
+  if (numberDisplay.textContent <= 2) {
+    minus2Button.setAttribute('disabled', true)
+  }
+
   if (numberDisplay.textContent < 10) {
     plusButton.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent < 9) {
+    plus2Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    numberDisplay.style.color = 'green'
+  } else {
+    numberDisplay.style.color = 'red'
+  }
+})
+
+minus2Button.addEventListener('click', function() {
+  numberDisplay.textContent = numberDisplay.textContent - 2
+  input.value = numberDisplay.textContent
+
+  if (numberDisplay.textContent <= 1) {
+    minusButton.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent <= 2) {
+    minus2Button.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent < 10) {
+    plusButton.removeAttribute('disabled')
+  }
+  
+  if (numberDisplay.textContent < 9) {
+    plus2Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    numberDisplay.style.color = 'green'
+  } else {
+    numberDisplay.style.color = 'red'
   }
 })
 
 plusButton.addEventListener('click', function() {
   numberDisplay.textContent = Number(numberDisplay.textContent) + 1
+  input.value = numberDisplay.textContent
 
   if (numberDisplay.textContent >= 10) {
     plusButton.setAttribute('disabled', true)
+  }
+  
+  if (numberDisplay.textContent >= 9) {
+    plus2Button.setAttribute('disabled', true)
   }
 
   if (numberDisplay.textContent > 1) {
     minusButton.removeAttribute('disabled')
   }
+
+  if (numberDisplay.textContent > 2) {
+    minus2Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    numberDisplay.style.color = 'green'
+  } else {
+    numberDisplay.style.color = 'red'
+  }
 })
 
+plus2Button.addEventListener('click', function() {
+  numberDisplay.textContent = Number(numberDisplay.textContent) + 2
+  input.value = numberDisplay.textContent
 
+  if (numberDisplay.textContent >= 10) {
+    plusButton.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent >= 9) {
+    plus2Button.setAttribute('disabled', true)
+  }
+
+  if (numberDisplay.textContent > 1) {
+    minusButton.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent > 2) {
+    minus2Button.removeAttribute('disabled')
+  }
+
+  if (numberDisplay.textContent >= 5) {
+    numberDisplay.style.color = 'green'
+  } else {
+    numberDisplay.style.color = 'red'
+  }
+})
+
+input.addEventListener('input', function() {
+  numberDisplay.textContent = input.value
+})
+
+resetButton.addEventListener('click', function() {
+  numberDisplay.textContent = 5
+  input.value = numberDisplay.textContent
+  numberDisplay.style.color = 'green'
+
+  plusButton.removeAttribute('disabled')
+  plus2Button.removeAttribute('disabled')
+  minusButton.removeAttribute('disabled')
+  minus2Button.removeAttribute('disabled')
+})
 
 
 

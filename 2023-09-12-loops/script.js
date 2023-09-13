@@ -76,10 +76,187 @@ function count(num) {
 // }
 
 
-function task1() {
-  for (let i = 1; i <= 100; i++) {
-    console.log(i)
-  } 
+// Sukurti funkcijas, kurios paleidžia ciklą su skaičiais nuo 1 iki 100. Šie ciklai:
+
+// 1. Padaugina skaičių iš 2.
+function task1(start = 1, end = 100, nth = 1) {
+  if (nth <= 0) {
+    console.log('Nth parametras privalo būti teigiamas skaičius')
+    return
+  }
+
+  for (let i = start; i <= end; i += nth) {
+    // console.log(i * 2)
+
+    let answer = i * 2
+    let output = `${i} * 2 = ${answer}`
+    console.log(output)
+  }
 }
 
-// task1()
+task1(35, 140, 0)
+
+// 2. Padaugina skaičių iš 5.
+function task2(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i += nth) {
+    // console.log(i * 5)
+
+    let answer = i * 5
+    let output = `${i} * 5 = ${answer}`
+    console.log(output)
+  }
+}
+
+// task2()
+
+// 3. Prideda prie skaičiaus 5.
+function task3(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i += nth) {
+    // console.log(i + 5)
+
+    let answer = i + 5
+    let output = `${i} + 5 = ${answer}`
+    console.log(output)
+  }
+}
+
+// task3()
+
+// 4. Atima iš skaičiaus 2.
+function task4(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i += nth) {
+    // console.log(i - 2)
+
+    let answer = i - 2
+    let output = `${i} - 2 = ${answer}`
+    console.log(output)
+  }
+}
+// task4()
+
+// 5. Pakelia skaičių kvadratu.
+function task5(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i += nth) {
+    // console.log(i * i)
+
+    let answer = i * i
+    let output = `${i}**2 = ${answer}`
+    console.log(output)
+  }
+}
+
+// task5()
+
+// 6. Pakelia skaičių kūbu.
+function task6(start = 1, end = 100, nth = 1) {
+  for (let i = start; i <= end; i += nth) {
+    // console.log(i * i * i)
+    // console.log(Math.pow(i, 3))
+    // console.log(i**3)
+
+    let answer = i * i
+    let output = `${i}**3 = ${answer}`
+    console.log(output)
+  }
+}
+
+// task6()
+
+
+
+// 1. Padaugina skaičių iš 2.
+function task7(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    console.log(i * 2)
+  }
+}
+
+// task7()
+
+// 2. Padaugina skaičių iš 5.
+function task8(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    console.log(i * 5)
+  }
+}
+
+// task8()
+
+// 3. Prideda prie skaičiaus 5.
+function task9(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    console.log(i + 5)
+  }
+}
+
+// task9()
+
+// 4. Atima iš skaičiaus 2.
+function task10(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    console.log(i - 2)
+  }
+}
+// task10()
+
+// 5. Pakelia skaičių kvadratu.
+function task11(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    console.log(i * i)
+  }
+}
+
+// task11()
+
+// 6. Pakelia skaičių kūbu.
+function task12(start = 100, end = 1, nth = 1) {
+  for (let i = start; i >= end; i -= nth) {
+    // console.log(i * i * i)
+    // console.log(Math.pow(i, 3))
+    console.log(i**3)
+  }
+}
+
+// task12()
+
+
+
+
+function multiply(multiplier = 2, start = 1, end = 100, nth = 1) {
+  if (nth <= 0) {
+    console.log('Nth parametras privalo būti teigiamas skaičius')
+    return
+  }
+
+  for (let i = start; i <= end; i += nth) {
+    let answer = i * multiplier
+    let output = `${i} * ${multiplier} = ${answer}`
+    console.log(output)
+  }
+}
+
+// multiply(4)
+
+
+function add(number = 2, start = 1, end = 100, nth = 1) {
+  if (nth <= 0) {
+    console.log('Nth parametras privalo būti teigiamas skaičius')
+    return
+  }
+
+  let symbol = '+'
+  let addNumber = number
+
+  if (number < 0) {
+    symbol = '-'
+    addNumber = number * -1
+  }
+
+  for (let i = start; i <= end; i += nth) {
+    let answer = i + number
+    let output = `${i} ${symbol} ${addNumber} = ${answer}`
+    console.log(output)
+  }
+}
+
+add(100)

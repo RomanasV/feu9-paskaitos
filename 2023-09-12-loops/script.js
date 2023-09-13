@@ -259,4 +259,4 @@ function add(number = 2, start = 1, end = 100, nth = 1) {
   }
 }
 
-add(100)
+add(100, 1, 100, 10)

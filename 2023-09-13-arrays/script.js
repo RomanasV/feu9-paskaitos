@@ -159,3 +159,40 @@ console.log(secondArrPart)
 let mergedArr = [...firstArrPart, ...secondArrPart]
 
 console.log(mergedArr)
+
+
+
+// FILTER
+
+let originalNums = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+console.log(originalNums);
+
+// originalNums.filter(function(element, index, array) {
+//   console.log(element)
+//   console.log(index)
+//   console.log(array)
+// })
+
+let filteredNums = originalNums.filter(function(num) {
+  return num > 5
+})
+console.log(filteredNums)
+
+let filteredNums2 = originalNums.filter(function(num) {
+  return num > 4 && num <= 8
+})
+console.log(filteredNums2)
+
+let filteredNums3 = originalNums.filter(function(num) {
+  return num > 4 && num <= 8 && num % 2 === 0
+})
+console.log(filteredNums3)
+
+let filteredNums4 = originalNums.filter(function(num) {
+  if (num > 4 && num <= 8 && num % 2 === 0) {
+    return true
+  } else {
+    return false
+  }
+})
+console.log(filteredNums4)

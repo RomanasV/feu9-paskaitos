@@ -121,3 +121,41 @@ console.log(slicedCountries11)
 let slicedCountries12 = countries.slice(4, 2)
 console.log(slicedCountries12)
 
+// SPLICE - modifikuoja (mutuoja) originalų masyvą
+let nums = [  1  ,   2  ,   3  ,   4  ,   5  ,   6  ,   7  ,   10];
+//         0     1      2      3      4      5      6      7     8
+//        -8    -7     -6     -5     -4     -3     -2     -1
+
+console.log(nums)
+
+// let splicedNums = nums.splice(2)
+// let splicedNums = nums.splice(0, 2)
+// let splicedNums = nums.splice(2, 1)
+// let splicedNums = nums.splice(2, 3)
+// let splicedNums = nums.splice(-1)
+// let splicedNums = nums.splice(-3, 2)
+// let splicedNums = nums.splice(-3, 2, 2)
+// let splicedNums = nums.splice(3, 2, 'Trys')
+// let splicedNums = nums.splice(2, 1, 2.5)
+// let splicedNums = nums.splice(2, 0, 2.5)
+let splicedNums = nums.splice(2, 0, 2.5, 2.8, 2.9)
+
+console.log(splicedNums)
+console.log(nums)
+
+
+let arr = ['start', 2, 3, 5, 11, 155, 888, '15x', 6789, -5564, 'obuolys', -51, 55, 0, 33, 789, 6543, 1, 'trylika', 444, 321, 654, -1, 987, -333, -321, 'end']
+
+console.log(arr)
+
+let firstArrPart = arr.slice(2, 7)
+let secondArrPart = arr.slice(-7, -3)
+
+console.log(firstArrPart)
+console.log(secondArrPart)
+
+// let mergedArr = firstArrPart.concat(secondArrPart)
+// let mergedArr = [firstArrPart, secondArrPart].flat()
+let mergedArr = [...firstArrPart, ...secondArrPart]
+
+console.log(mergedArr)

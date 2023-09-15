@@ -196,3 +196,42 @@ let filteredNums4 = originalNums.filter(function(num) {
   }
 })
 console.log(filteredNums4)
+
+
+// MAP
+let numsArr = [1, 4, 9, 12]
+
+for (let i = 0; i < numsArr.length; i++) {
+  console.log('Index: ' + i)
+  console.log('For ciklas: ' + numsArr[i])
+  console.log('Original Array: ', numsArr)
+}
+
+numsArr.map(function(num, index, originalArr) {
+  console.log('Index: ' + index)
+  console.log('Map ciklas: ' + num)
+  console.log('Original Array: ', originalArr)
+})
+
+// FOREACH
+
+numsArr.forEach(function(num, index, originalArr) {
+  console.log('Index: ' + index)
+  console.log('forEach ciklas: ' + num)
+  console.log('Original Array: ', originalArr)
+})
+
+// Map - grąžina reikšmę
+// forEach - negrąžina reikšmės
+
+let mapNums = numsArr.map(function(num) {
+  return 'Atsakymas: ' + num * num
+}).reverse()
+
+console.log(mapNums)
+
+let forEachNums = numsArr.forEach(function(num) {
+  return 'Atsakymas: ' + num * num
+})
+
+console.log(forEachNums)

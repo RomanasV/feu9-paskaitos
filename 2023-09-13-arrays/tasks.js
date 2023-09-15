@@ -462,12 +462,35 @@ console.log(task361);
 // 3.62. Gauti tik tekstus (string), kurie turi daugiau nei vieną raidę t.
 let task362 = arr.filter(item => {
   if (isNaN(item)) {
-    let wordLetters = item.split(''); // split metodas suskaido string'ą pagal pateiktą reikšmę. Jeigu pateikiami tušti skliaustai, tai string'ą suskaido raidėmis
-    let sameLettersArray = wordLetters.filter(letter => letter === 't');
+    // // PIRMAS TREČIAS
+    // let wordLetters = item.split(''); // split metodas suskaido string'ą pagal pateiktą reikšmę. Jeigu pateikiami tušti skliaustai, tai string'ą suskaido raidėmis
+    // let sameLettersArray = wordLetters.filter(letter => letter === 't');
 
-    if (sameLettersArray.length > 1) {
-      return item;
-    }
+    // if (sameLettersArray.length > 1) {
+    //   return item;
+    // }
+
+    // ANTRAS VARIANTAS
+    // let letterCount = 0
+
+    // for (let i = 0; i < item.length; i++) {
+    //   let letter = item[i]
+
+    //   if (letter === 't') {
+    //     letterCount++
+    //   }
+
+    //   // if (letterCount > 1) {
+    //   //   return
+    //   // }
+    // }
+
+    // return letterCount > 1
+
+
+    // TREČIAS BŪDAS
+    let wordLetters = item.split('')
+    return wordLetters.length > 2
   }
 });
 console.log(task362);

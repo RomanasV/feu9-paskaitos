@@ -235,3 +235,28 @@ let forEachNums = numsArr.forEach(function(num) {
 })
 
 console.log(forEachNums)
+
+
+
+let dataArr = ['text', 454, 'kitas text', 77841, 454, 'labas']
+console.log(dataArr)
+
+for (let i = 0; i < dataArr.length; i++) {
+  let item = dataArr[i]
+
+  if (!isNaN(item)) {
+    console.log(item)
+  }
+}
+
+dataArr.map(item => {
+  if (!isNaN(item)) {
+    console.log(item)
+  }
+})
+
+dataArr.forEach(item => {
+  if (!isNaN(item)) {
+    console.log(item)
+  }
+})

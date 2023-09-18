@@ -573,64 +573,87 @@ console.groupEnd();
 
 // 4. Tęsiant darbą su ankstesniu masyvu atlikti šias užduotis naudojant for ciklą ir map metodą. Kiekvieną užduotį atlikti abiem būdais (for ciklu ir map metodu). Visus narius išvesti į konsole pagal žemiau pateiktas sąlygas:
 // 4.1. Tik skaičius (number tipo duomenis).
-// for (let i = 0; i < arr.length; i++) {
-//   if (!isNaN(arr[i])) {
-//     console.log(arr[i]);
-//   }
-// }
 
-// arr.map(item => {
-//   if (!isNaN(item)) {
-//     console.log(item);
-//   }
-// })
+function task41(data) {
+  let ulElement = document.querySelector('#task41')
 
+  for (let i = 0; i < data.length; i++) {
+    if (!isNaN(data[i])) {
+      let liElement = document.createElement('li')
+      liElement.textContent = data[i]
+      ulElement.prepend(liElement)
+    }
+  }
+  
+  // data.map(item => {
+  //   if (!isNaN(item)) {
+  //     let liElement = document.createElement('li')
+  //     liElement.textContent = item
+  //     ulElement.prepend(liElement)
+  //   }
+  // })
+}
 
+// task41(arr)
 
 // 4.2. Tik tekstą (string tipo duomenis).
-// for (let i = 0; i < arr.length; i++) {
-//   if (typeof arr[i] === 'string') {
-//     console.log(arr[i]);
-//   }
-// }
-  
-// arr.map(item => {
-//   if (typeof item === 'string') {
-//     console.log(item);
-//   }
-// })
+function task42(data) {
+  let ulElement = document.querySelector('#task42')
 
+  for (let i = 0; i < data.length; i++) {
+    if (typeof data[i] === 'string') {
+      let liElement = document.createElement('li')
+      liElement.textContent = data[i]
+      ulElement.prepend(liElement)
+    }
+  }
+    
+  // data.map(item => {
+  //   if (typeof item === 'string') {
+  //     let liElement = document.createElement('li')
+  //     liElement.textContent = item
+  //     ulElement.prepend(liElement)
+  //   }
+  // })
+}
+
+task42(arr)
 
 
 // 4.3. Tik skaičius (number tipo duomenis) ir juos pakelti 4-tuoju laipsniu.
-// for (let i = 0; i < arr.length; i++) {
-//   if (!isNaN(arr[i])) {
-//     console.log(Math.pow(arr[i], 4));
-//   }
-// }
-  
-// arr.map(item => {
-//   if (!isNaN(item)) {
-//     console.log(Math.pow(item, 4));
-//   }
-// })
 
+function task43(data, num = 2) {
+  for (let i = 0; i < data.length; i++) {
+    if (!isNaN(data[i])) {
+      console.log(Math.pow(data[i], num));
+    }
+  }
+    
+  // data.map(item => {
+  //   if (!isNaN(item)) {
+  //     console.log(Math.pow(item, num));
+  //   }
+  // })
+}
 
+// task43(arr, 1)
 
 // 4.4. Tik skaičius (number tipo duomenis) ir prie jų pridėti 55.
-// for (let i = 0; i < arr.length; i++) {
-//   if (!isNaN(arr[i])) {
-//     console.log(arr[i] + 55);
-//   }
-// }
-  
-// arr.map(item => {
-//   if (!isNaN(item)) {
-//     console.log(item + 55);
-//   }
-// })
+function task44(data, num = 0) {
+  for (let i = 0; i < data.length; i++) {
+    if (!isNaN(data[i])) {
+      console.log(data[i] + num);
+    }
+  }
+    
+  // data.map(item => {
+  //   if (!isNaN(item)) {
+  //     console.log(item + num);
+  //   }
+  // })
+}
 
-
+task44(arr, 55)
 
 // 4.5. Tik skaičius (number tipo duomenis) ir juos padalinti iš 2.
 // for (let i = 0; i < arr.length; i++) {

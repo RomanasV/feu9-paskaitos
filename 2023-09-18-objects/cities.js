@@ -88,16 +88,16 @@ let citiesData = [
       touristAttractions: ['Melbourne Skydeck'],
       isCapital: false,
   },
-  {
-      name: 'Sapporo',
-      population: 1900000,
-      location: {
-          continent: 'Asia',
-          country: 'Japan',
-      },
-      touristAttractions: ['Hokkaido Jingu'],
-      isCapital: false,
-  },
+  // {
+  //     name: 'Sapporo',
+  //     population: 1900000,
+  //     location: {
+  //         continent: 'Asia',
+  //         country: 'Japan',
+  //     },
+  //     touristAttractions: ['Hokkaido Jingu'],
+  //     isCapital: false,
+  // },
   {
       name: 'Miami',
       population: 400000,
@@ -179,12 +179,79 @@ renderCities(citiesData)
 
 //  2.1. Panaudojant ciklą, atvaizduoti visus miestus ekrane pagal nurodytą stilių.
 
-// 5. Naudojant tik JavaScript:
-//  5.1. Pakeisti visų sostinių teksto spalvą.
-//  5.2. Pakeisti kas antro miesto fono spalvą.
- 
-//  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
-//  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
+function styleCities() {
+  //  5.1. Pakeisti visų sostinių teksto spalvą.
+  let cityTitles = document.querySelectorAll('.capital h2')
+  cityTitles.forEach((title) => {
+    title.style.color = 'green'
+  })
 
-// 6. Miestų plotis turi būti 50%.
-// 6.1. Jeigu miestų skaičius nėra porinis, tai paskutinio miesto plotis turi būti 100%.
+  //  5.2. Pakeisti kas antro miesto fono spalvą.
+  let allCities = document.querySelectorAll('.city-item')
+
+  // allCities.forEach((city, index) => {
+  //   if (index % 2 === 0) {
+  //     city.style.backgroundColor = '#f0f0f0'
+  //   }
+  // })
+
+  let oddCities = document.querySelectorAll('.city-item:nth-child(odd)')
+  oddCities.forEach(city => {
+    city.style.backgroundColor = '#f0f0f0'
+  })
+
+  //  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
+  //  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
+
+  // let firstLiElements = document.querySelectorAll('.city-item li:first-child')
+  // firstLiElements.forEach(element => {
+  //   element.style.color = 'green'
+  // })
+
+  // let lastLiElements = document.querySelectorAll('.city-item li:nth-child(1n+4)')
+  // lastLiElements.forEach(element => {
+  //   element.style.color = 'red'
+  // })
+
+  allCities.forEach(city => {
+    let liElements = city.querySelectorAll('li')
+
+    for (let i = 0; i < liElements.length; i++) {
+      let color = 'black'
+
+      if (i === 0) {
+        color = 'green'
+      } else if (i > 2) {
+        color = 'red'
+      } else {
+        color = 'orange'
+      }
+
+      liElements[i].style.color = color
+    }
+  })
+
+  // 6. Miestų plotis turi būti 50%.
+  // 6.1. Jeigu miestų skaičius nėra porinis, tai paskutinio miesto plotis turi būti 100%.
+  allCities.forEach((city, index) => {
+    city.style.padding = '20px'
+    city.style.boxSizing = 'border-box'
+
+    if (index === allCities.length - 1 && allCities.length % 2 !== 0) {
+      city.style.width = '100%'
+    } else {
+      city.style.width = 'calc((100% - 20px) / 2)'
+    }
+  })
+
+  let citiesList = document.querySelector('#cities-list')
+  // citiesList.style.display = 'flex'
+  // citiesList.style.flexWrap = 'wrap'
+  // citiesList.style.gap = '20px'
+  citiesList.style = `display: flex;
+                      flex-wrap: wrap;
+                      gap: 20px;`
+}
+
+styleCities()
+

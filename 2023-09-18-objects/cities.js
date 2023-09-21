@@ -111,29 +111,20 @@ let citiesData = [
 ];
 
 function renderCities(cities) {
-  console.log(cities)
   let citiesList = document.querySelector('#cities-list')
 
-  cities.forEach((city) => {
-    // 1.6. Visus miestų masyvų narius išvesti į konsolę.
-    console.log(city)
-    // 1.6.1. Visų miestų pavadinimis išvesti į konsolę.
-    console.log(city.name)
-    // 1.6.2. Visų miestų populiaciją išvesti į konsolę.
-    console.log(city.population)
-    console.log(city.location)
-    // 1.6.3. Visų miestų žemyną išvesti į konsolę.
-    console.log(city.location.continent)
-    // 1.6.4. Visų miestų šalį išvesti į konsolę.
-    console.log(city.location.country)
-    // 1.6.5. Į konsolę išvesti ar miestas yra sostinė, ar ne.
-    console.log(city.isCapital)
-    // 1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
-    console.log(city.touristAttractions)
+  cities.forEach(city => {
+    // let name = city.name
+    // let population = city.population
+    // let isCapital = city.isCapital
+    // let touristAttractions = city.touristAttractions
 
-    city.touristAttractions.forEach((touristAttraction) => {
-      console.log(touristAttraction)
-    })
+    let { name, population, isCapital, touristAttractions } = city
+
+    // let continent = city.location.continent
+    // let country = city.location.country
+
+    let { continent, country } = city.location
 
     let cityItem = document.createElement('div')
     cityItem.classList.add('city-item')
@@ -142,44 +133,34 @@ function renderCities(cities) {
     let capitalDescriptionText = ''
     let capitalNameText = ''
 
-    if (city.isCapital) {
-      // 3.1. Jeigu miestas yra sostinė, tai:
-      //  3.1.1. Prie miesto pavadinimo pridėti žodį capital, pvz.: Vilnius (capital)
+    if (isCapital) {
       capitalNameText = ' (capital)'
-
-      //  3.1.2. Prie miesto aprašymo pridėti tekstą, kuris nusako jog tai šalies sostinė, pvz.: „Vilnius is the capital of Lithuania."
-      capitalDescriptionText = ` ${city.name} is the capital of ${city.location.country}.`
-      
-      //  3.1.3. Jeigu miestas yra sostinė, tai prie apgaubiančio elemento pridėti klasę „capital".
+      capitalDescriptionText = ` ${name} is the capital of ${country}.`
       cityItem.classList.add('capital')
     }
 
     let cityNameElement = document.createElement('h2')
-    cityNameElement.textContent = city.name + capitalNameText
+    cityNameElement.textContent = name + capitalNameText
 
     let cityDescriptionElement = document.createElement('p')
-    cityDescriptionElement.textContent = `${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.${capitalDescriptionText}`
+    cityDescriptionElement.textContent = `${name} city is located in ${continent}, ${country} and has population of ${population} people.${capitalDescriptionText}`
 
     cityItem.append(cityNameElement, cityDescriptionElement)
 
-    // 4. Priklausomai nuo miesto lankytinų objektų kiekio, tekstas turi skirtis:
-    //  4.3. Jeigu lankytinų vietų nėra, tai tekstas neturėtų būti atvaizduojamas.
-    if (city.touristAttractions.length > 0) {
+    if (touristAttractions.length > 0) {
       let touristAttractionsWrapper = document.createElement('div')
       touristAttractionsWrapper.classList.add('tourists-attractions-wrapper')
   
       let touristAttractionsTitle = document.createElement('h3')
-      //  4.1. Jeigu lankytina vieta tik viena, tai turėtų būti naudojama vienaskaita, pvz.: „Main Tourist attraction of Vilnius is".
-      touristAttractionsTitle.textContent = `Main Tourist attractions of ${city.name} are:`
+      touristAttractionsTitle.textContent = `Main Tourist attractions of ${name} are:`
 
-      //  4.2. Jeigu lankytinų vietų yra daugiau, nei viena, tai tekstas turėtų būti daugiskaitoje, pvz. „Main Tourist attractions of Kaunas are".
-      if (city.touristAttractions.length === 1) {
-        touristAttractionsTitle.textContent = `Main Tourist attraction of ${city.name} is:`
+      if (touristAttractions.length === 1) {
+        touristAttractionsTitle.textContent = `Main Tourist attraction of ${name} is:`
       }
   
       let touristAttractionsList = document.createElement('ul')
   
-      city.touristAttractions.forEach((touristAttraction) => {
+      touristAttractions.forEach(touristAttraction => {
         let touristAttractionItem = document.createElement('li')
         touristAttractionItem.textContent = touristAttraction
   
@@ -197,8 +178,6 @@ renderCities(citiesData)
 
 
 //  2.1. Panaudojant ciklą, atvaizduoti visus miestus ekrane pagal nurodytą stilių.
-
-
 
 // 5. Naudojant tik JavaScript:
 //  5.1. Pakeisti visų sostinių teksto spalvą.

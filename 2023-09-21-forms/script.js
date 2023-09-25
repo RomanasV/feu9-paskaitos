@@ -1,5 +1,19 @@
+const initialData = [
+  {
+    name: 'Steve',
+    surname: 'fasdasd'
+  },
+  {
+
+  },
+  {
+
+  }
+]
+
 function init() {
   rangeOutputDisplay()
+  renderInitialData()
 
   const studentForm = document.querySelector('#student-form')
 
@@ -102,6 +116,10 @@ function init() {
 }
 
 init()
+
+function renderInitialData() {
+  console.log('Kuriami studentai is initialData masyvo')
+}
 
 function alertMessage(text, elementClass) {
   const alertMessageElement = document.querySelector('#alert-message')

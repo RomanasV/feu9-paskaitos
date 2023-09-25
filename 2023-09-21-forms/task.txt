@@ -33,3 +33,7 @@ KETVIRTA DALIS (studento ištrynimas):
 1. Prie kiekvieno sukurti studento elemento pridėti mygtuką „Ištrinti studentą".
 2. Paspaudus šį mygtuką, studento elementas yra ištrinamas.
 3. Ištrynus studentą, turi iššokti <span> elementas, kuris informuoja apie studento ištrynimą: „Studentas (Vardas Pavardė) sėkmingai ištrintas.". Šis span elementas dingsta po 5 sekundžių.
+
+ŠEŠTA UŽDUOTIS:
+1. Sukurti pradinius duomenų masyvą, kuriame būtų bent 5 studentų duomenys (objektų formatu).
+2. Sukurti funkciją, kuri priima šiuos duomenis ir užkrovus puslapį į ekraną iškart išveda duomenis iš šio masyvo.

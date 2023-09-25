@@ -1,4 +1,6 @@
 function init() {
+  rangeOutputDisplay()
+
   const studentForm = document.querySelector('#student-form')
 
   studentForm.addEventListener('submit', (event) => {
@@ -27,10 +29,20 @@ function init() {
     ageElement.innerHTML = `<strong>Age:</strong> ${age}`
 
     const phoneElement = document.createElement('p')
-    phoneElement.innerHTML = `<strong>Phone:</strong> ${phone}`
+    phoneElement.innerHTML = `<strong>Phone:</strong> `
+
+    const phoneSpanElement = document.createElement('span')
+    phoneSpanElement.textContent = '****'
+
+    phoneElement.append(phoneSpanElement)
 
     const emailElement = document.createElement('p')
-    emailElement.innerHTML = `<strong>Email:</strong> ${email}`
+    emailElement.innerHTML = `<strong>Email:</strong> `
+
+    const emailSpanElement = document.createElement('span')
+    emailSpanElement.textContent = '****'
+
+    emailElement.append(emailSpanElement)
 
     const itKnowledgeElement = document.createElement('p')
     itKnowledgeElement.innerHTML = `<strong>IT Knowledge:</strong> ${itKnowledge}/10`
@@ -52,9 +64,63 @@ function init() {
 
     interestsWrapperElement.append(interestsHeaderElement, interestsList)
 
-    studentItem.append(nameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapperElement)
+    const privateInfoButton = document.createElement('button')
+    privateInfoButton.textContent = 'Show private info'
+
+    let showPrivateInfo = false
+
+    privateInfoButton.addEventListener('click', () => {
+      showPrivateInfo = !showPrivateInfo
+
+      if (showPrivateInfo) {
+        privateInfoButton.textContent = 'Hide private info'
+        phoneSpanElement.textContent = phone
+        emailSpanElement.textContent = email
+      } else {
+        privateInfoButton.textContent = 'Show private info'
+        phoneSpanElement.textContent = '****'
+        emailSpanElement.textContent = '****'
+      }
+    })
+
+    const deleteStudentButton = document.createElement('button')
+    deleteStudentButton.textContent = 'Remove Student'
+
+    deleteStudentButton.addEventListener('click', () => {
+      studentItem.remove()
+
+      alertMessage(`Student (${name} ${surname}) successfully removed`, 'danger')
+    })
+
+    studentItem.append(nameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapperElement, privateInfoButton, deleteStudentButton)
     studentsList.prepend(studentItem)
+    form.reset()
+
+    alertMessage(`Student (${name} ${surname}) successfully created`, 'success')
+    rangeOutputDisplay()
   })
 }
 
 init()
+
+function alertMessage(text, elementClass) {
+  const alertMessageElement = document.querySelector('#alert-message')
+  alertMessageElement.classList.add(elementClass)
+  alertMessageElement.textContent = text
+
+  setTimeout(() => {
+    alertMessageElement.textContent = ''
+    alertMessageElement.classList.remove(elementClass)
+  }, 5000);
+}
+
+function rangeOutputDisplay() {
+  const input = document.querySelector('#student-it-knowledge')
+  const output = document.querySelector('#it-knowledge-output')
+
+  output.textContent = input.value
+
+  input.addEventListener('input', (event) => {
+    output.textContent = event.target.value
+  })
+}

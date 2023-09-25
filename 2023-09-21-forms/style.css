@@ -1,0 +1,7 @@
+#alert-message.success {
+  color: green;
+}
+
+#alert-message.danger {
+  color: red;
+}

@@ -6,33 +6,96 @@
   <title>Forms</title>
 </head>
 <body>
-  <form id="test-form">
+  <!-- 1. Tekstinis laukelis vardui (privalomas).
+  2. Tekstinis laukelis pavardei (privalomas).
+  3. Skaičiaus laukelis amžiui (privalomas).
+  4. Laukelis įvesti telefono numerį (neprivalomas).
+  5. Laukelis įvesti el. paštą (privalomas).
+  6. Range tipo laukelis, kuris skirtas įvertinti savo IT žinias nuo 1 iki 10. Galimas vertinimas tik sveikiems skaičiams.
+  7. Radio tipo laukeliai, kuriuose pasirenkamas grupės numeris. Turi būti galimybė pasirinkti grupes nuo FEU 1gr. iki FEU 10gr.
+  8. Checkbox tipo laukeliai, kuriuose galima pasirinkti dominančias programavimo kalbas (bent 4 skirtingi checkbox elementai).
+  9. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą. -->
+
+  <form id="student-form">
     <div class="form-control">
-      <label for="person-name">Name:</label>
-      <input type="text" name="name" id="person-name" placeholder="Enter your name...">
+      <label for="student-name">Name:</label>
+      <input type="text" name="name" id="student-name" required value="John">
     </div>
 
     <div class="form-control">
-      <label for="person-age">Age:</label>
-      <input type="number" name="age" id="person-age" placeholder="Enter your age...">
+      <label for="student-surname">Surname:</label>
+      <input type="text" name="surname" id="student-surname" required value="Doe">
+    </div>
+
+    <div class="form-control">
+      <label for="student-age">Age:</label>
+      <input type="number" name="age" id="student-age" min="0" max="100" required value="30">
+    </div>
+    
+    <div class="form-control">
+      <label for="student-phone">Phone:</label>
+      <input type="tel" name="phone" id="student-phone" value="+37045641312">
+    </div>
+    
+    <div class="form-control">
+      <label for="student-email">Email:</label>
+      <input type="email" name="email" id="student-email" required value="email@email.com">
+    </div>
+    
+    <div class="form-control">
+      <label for="student-it-knowledge">IT Knowledge:</label>
+      <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10" value="5">
     </div>
 
     <fieldset>
-      <legend>Agree with terms and conditions</legend>
-      
+      <legend>Group:</legend>
+
       <div class="form-control">
-        <input type="radio" name="terms-agree" id="agree" value="agree">
-        <label for="agree">Agree</label>
+        <input type="radio" name="group" id="group-1" value="FEU 1" checked>
+        <label for="group-1">FEU 1 gr.</label>
       </div>
-      
+
       <div class="form-control">
-        <input type="radio" name="terms-agree" id="disagree" value="disagree">
-        <label for="disagree">Disagree</label>
+        <input type="radio" name="group" id="group-2" value="FEU 2">
+        <label for="group-2">FEU 2 gr.</label>
+      </div>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-3" value="FEU 3">
+        <label for="group-3">FEU 3 gr.</label>
+      </div>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-4" value="FEU 4">
+        <label for="group-4">FEU 4 gr.</label>
       </div>
     </fieldset>
 
-    <!-- <button type="submit">Submit</button> -->
-    <input type="submit" value="Submit" id="submit-button">
+    <fieldset>
+      <legend>Interests:</legend>
+
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-1" value="JavaScript">
+        <label for="interest-1">JavaScript</label>
+      </div>
+
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-2" value="PHP">
+        <label for="interest-2">PHP</label>
+      </div>
+
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-3" value="Java">
+        <label for="interest-3">Java</label>
+      </div>
+
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-4" value="Python">
+        <label for="interest-4">Python</label>
+      </div>
+    </fieldset>
+
+    <input type="submit" value="Submit">
   </form>
 
   <div id="students-list"></div>

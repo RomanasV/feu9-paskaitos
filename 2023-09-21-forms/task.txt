@@ -37,3 +37,8 @@ KETVIRTA DALIS (studento ištrynimas):
 ŠEŠTA UŽDUOTIS:
 1. Sukurti pradinius duomenų masyvą, kuriame būtų bent 5 studentų duomenys (objektų formatu).
 2. Sukurti funkciją, kuri priima šiuos duomenis ir užkrovus puslapį į ekraną iškart išveda duomenis iš šio masyvo.
+
+AŠTUNTA UŽDUOTIS (local storage):
+1. Vedamą tekstą į input elementus išsaugoti į localStorage.
+2. Perkrovus puslapį localStorage esančiomis reikšmėmis užpildyti input elementus.
+3. Jeigu sukuriamas studentas, tai localStorage esančias reikšmes reikia išvalyti.

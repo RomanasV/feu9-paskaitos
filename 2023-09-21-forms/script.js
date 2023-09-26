@@ -71,83 +71,42 @@ function init(initialData) {
     const group = form.group.value
     const interests = form.querySelectorAll('input[name="interest"]:checked')
 
-    const studentsList = document.querySelector('#students-list')
+    // const interestsData = []
+    // interests.forEach(interest => {
+    //   interestsData.push(interest.value)
+    // })
 
-    const studentItem = document.createElement('div')
-    studentItem.classList.add('student-item')
+    // const interestsData = Array.from(interests).map(interest => {
+    //   return interest.value
+    // })
 
-    const nameElement = document.createElement('h2')
-    nameElement.textContent = `${name} ${surname}`
-
-    const ageElement = document.createElement('p')
-    ageElement.innerHTML = `<strong>Age:</strong> ${age}`
-
-    const phoneElement = document.createElement('p')
-    phoneElement.innerHTML = `<strong>Phone:</strong> `
-
-    const phoneSpanElement = document.createElement('span')
-    phoneSpanElement.textContent = '****'
-
-    phoneElement.append(phoneSpanElement)
-
-    const emailElement = document.createElement('p')
-    emailElement.innerHTML = `<strong>Email:</strong> `
-
-    const emailSpanElement = document.createElement('span')
-    emailSpanElement.textContent = '****'
-
-    emailElement.append(emailSpanElement)
-
-    const itKnowledgeElement = document.createElement('p')
-    itKnowledgeElement.innerHTML = `<strong>IT Knowledge:</strong> ${itKnowledge}/10`
-
-    const groupElement = document.createElement('p')
-    groupElement.innerHTML = `<strong>Group:</strong> ${group}`
-
-    const interestsWrapperElement = document.createElement('div')
-    const interestsHeaderElement = document.createElement('h3')
-    interestsHeaderElement.textContent = 'Interests:'
-
-    const interestsList = document.createElement('ul')
-
-    interests.forEach(interest => {
-      const interestItem = document.createElement('li')
-      interestItem.textContent = interest.value
-      interestsList.append(interestItem)
+    const interestsData = [...interests].map(interest => {
+      return interest.value
     })
 
-    interestsWrapperElement.append(interestsHeaderElement, interestsList)
+    // const student = {
+    //   name: name,
+    //   surname: surname,
+    //   age: age,
+    //   phone: phone,
+    //   email: email,
+    //   itKnowledge: itKnowledge,
+    //   group: group,
+    //   interests: interests,
+    // }
 
-    const privateInfoButton = document.createElement('button')
-    privateInfoButton.textContent = 'Show private info'
+    const studentData = {
+      name,
+      surname,
+      age,
+      phone,
+      email,
+      itKnowledge,
+      group,
+      interests: interestsData,
+    }
 
-    let showPrivateInfo = false
-
-    privateInfoButton.addEventListener('click', () => {
-      showPrivateInfo = !showPrivateInfo
-
-      if (showPrivateInfo) {
-        privateInfoButton.textContent = 'Hide private info'
-        phoneSpanElement.textContent = phone
-        emailSpanElement.textContent = email
-      } else {
-        privateInfoButton.textContent = 'Show private info'
-        phoneSpanElement.textContent = '****'
-        emailSpanElement.textContent = '****'
-      }
-    })
-
-    const deleteStudentButton = document.createElement('button')
-    deleteStudentButton.textContent = 'Remove Student'
-
-    deleteStudentButton.addEventListener('click', () => {
-      studentItem.remove()
-
-      alertMessage(`Student (${name} ${surname}) successfully removed`, 'danger')
-    })
-
-    studentItem.append(nameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapperElement, privateInfoButton, deleteStudentButton)
-    studentsList.prepend(studentItem)
+    renderSingleStudent(studentData)
     
     form.reset()
 
@@ -159,98 +118,97 @@ function init(initialData) {
 init(initialData)
 
 function renderInitialData(studentsData) {
-  studentsData.forEach(student => {
-    const name = student.name
-    const surname = student.surname
-    const age = student.age
-    const phone = student.phone
-    const email = student.email
-    const itKnowledge = student.itKnowledge
-    const group = student.group
-    const interests = student.interests
-
-    const studentsList = document.querySelector('#students-list')
-
-    const studentItem = document.createElement('div')
-    studentItem.classList.add('student-item')
-
-    const nameElement = document.createElement('h2')
-    nameElement.textContent = `${name} ${surname}`
-
-    const ageElement = document.createElement('p')
-    ageElement.innerHTML = `<strong>Age:</strong> ${age}`
-
-    const phoneElement = document.createElement('p')
-    phoneElement.innerHTML = `<strong>Phone:</strong> `
-
-    const phoneSpanElement = document.createElement('span')
-    phoneSpanElement.textContent = '****'
-
-    phoneElement.append(phoneSpanElement)
-
-    const emailElement = document.createElement('p')
-    emailElement.innerHTML = `<strong>Email:</strong> `
-
-    const emailSpanElement = document.createElement('span')
-    emailSpanElement.textContent = '****'
-
-    emailElement.append(emailSpanElement)
-
-    const itKnowledgeElement = document.createElement('p')
-    itKnowledgeElement.innerHTML = `<strong>IT Knowledge:</strong> ${itKnowledge}/10`
-
-    const groupElement = document.createElement('p')
-    groupElement.innerHTML = `<strong>Group:</strong> ${group}`
-
-    const interestsWrapperElement = document.createElement('div')
-    const interestsHeaderElement = document.createElement('h3')
-    interestsHeaderElement.textContent = 'Interests:'
-
-    const interestsList = document.createElement('ul')
-
-    interests.forEach(interest => {
-      const interestItem = document.createElement('li')
-      interestItem.textContent = interest
-      interestsList.append(interestItem)
-    })
-
-    interestsWrapperElement.append(interestsHeaderElement, interestsList)
-
-    const privateInfoButton = document.createElement('button')
-    privateInfoButton.textContent = 'Show private info'
-
-    let showPrivateInfo = false
-
-    privateInfoButton.addEventListener('click', () => {
-      showPrivateInfo = !showPrivateInfo
-
-      if (showPrivateInfo) {
-        privateInfoButton.textContent = 'Hide private info'
-        phoneSpanElement.textContent = phone
-        emailSpanElement.textContent = email
-      } else {
-        privateInfoButton.textContent = 'Show private info'
-        phoneSpanElement.textContent = '****'
-        emailSpanElement.textContent = '****'
-      }
-    })
-
-    const deleteStudentButton = document.createElement('button')
-    deleteStudentButton.textContent = 'Remove Student'
-
-    deleteStudentButton.addEventListener('click', () => {
-      studentItem.remove()
-
-      alertMessage(`Student (${name} ${surname}) successfully removed`, 'danger')
-    })
-
-    studentItem.append(nameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapperElement, privateInfoButton, deleteStudentButton)
-    studentsList.prepend(studentItem)
-  })
+  studentsData.forEach(student => renderSingleStudent(student))
 }
 
-function renderSingleStudent() {
-  
+function renderSingleStudent(student) {
+  // console.log(student)
+  const name = student.name
+  const surname = student.surname
+  const age = student.age
+  const phone = student.phone
+  const email = student.email
+  const itKnowledge = student.itKnowledge
+  const group = student.group
+  const interests = student.interests
+
+  const studentsList = document.querySelector('#students-list')
+
+  const studentItem = document.createElement('div')
+  studentItem.classList.add('student-item')
+
+  const nameElement = document.createElement('h2')
+  nameElement.textContent = `${name} ${surname}`
+
+  const ageElement = document.createElement('p')
+  ageElement.innerHTML = `<strong>Age:</strong> ${age}`
+
+  const phoneElement = document.createElement('p')
+  phoneElement.innerHTML = `<strong>Phone:</strong> `
+
+  const phoneSpanElement = document.createElement('span')
+  phoneSpanElement.textContent = '****'
+
+  phoneElement.append(phoneSpanElement)
+
+  const emailElement = document.createElement('p')
+  emailElement.innerHTML = `<strong>Email:</strong> `
+
+  const emailSpanElement = document.createElement('span')
+  emailSpanElement.textContent = '****'
+
+  emailElement.append(emailSpanElement)
+
+  const itKnowledgeElement = document.createElement('p')
+  itKnowledgeElement.innerHTML = `<strong>IT Knowledge:</strong> ${itKnowledge}/10`
+
+  const groupElement = document.createElement('p')
+  groupElement.innerHTML = `<strong>Group:</strong> ${group}`
+
+  const interestsWrapperElement = document.createElement('div')
+  const interestsHeaderElement = document.createElement('h3')
+  interestsHeaderElement.textContent = 'Interests:'
+
+  const interestsList = document.createElement('ul')
+
+  interests.forEach(interest => {
+    const interestItem = document.createElement('li')
+    interestItem.textContent = interest
+    interestsList.append(interestItem)
+  })
+
+  interestsWrapperElement.append(interestsHeaderElement, interestsList)
+
+  const privateInfoButton = document.createElement('button')
+  privateInfoButton.textContent = 'Show private info'
+
+  let showPrivateInfo = false
+
+  privateInfoButton.addEventListener('click', () => {
+    showPrivateInfo = !showPrivateInfo
+
+    if (showPrivateInfo) {
+      privateInfoButton.textContent = 'Hide private info'
+      phoneSpanElement.textContent = phone
+      emailSpanElement.textContent = email
+    } else {
+      privateInfoButton.textContent = 'Show private info'
+      phoneSpanElement.textContent = '****'
+      emailSpanElement.textContent = '****'
+    }
+  })
+
+  const deleteStudentButton = document.createElement('button')
+  deleteStudentButton.textContent = 'Remove Student'
+
+  deleteStudentButton.addEventListener('click', () => {
+    studentItem.remove()
+
+    alertMessage(`Student (${name} ${surname}) successfully removed`, 'danger')
+  })
+
+  studentItem.append(nameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapperElement, privateInfoButton, deleteStudentButton)
+  studentsList.prepend(studentItem)
 }
 
 function alertMessage(text, elementClass) {

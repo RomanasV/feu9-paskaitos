@@ -1,58 +1,58 @@
-const initialData = [
-  {
-    name: 'Steve',
-    surname: 'Doe',
-    age: 30,
-    phone: '+370678115214',
-    email: 'email@email1.com',
-    itKnowledge: 7,
-    group: 'FEU 2',
-    interests: ['JavaScript', 'Java'],
-  },
-  {
-    name: 'John',
-    surname: 'Doe',
-    age: 35,
-    phone: '+370678115214',
-    email: 'email@email2.com',
-    itKnowledge: 7,
-    group: 'FEU 2',
-    interests: ['JavaScript', 'Python'],
-  },
-  {
-    name: 'Steve',
-    surname: 'Doe',
-    age: 20,
-    phone: '+370678115214',
-    email: 'email@email3.com',
-    itKnowledge: 5,
-    group: 'FEU 2',
-    interests: ['Java'],
-  },
-  {
-    name: 'Steve',
-    surname: 'Doe',
-    age: 40,
-    phone: '+370678115214',
-    email: 'email@email4.com',
-    itKnowledge: 10,
-    group: 'FEU 2',
-    interests: ['JavaScript', 'Java', 'PHP'],
-  },
-  {
-    name: 'Steve',
-    surname: 'Doe',
-    age: 18,
-    phone: '+370678115214',
-    email: 'email@email5.com',
-    itKnowledge: 1,
-    group: 'FEU 2',
-    interests: [],
-  },
-]
+// const initialData = [
+//   {
+//     name: 'Steve',
+//     surname: 'Doe',
+//     age: 30,
+//     phone: '+370678115214',
+//     email: 'email@email1.com',
+//     itKnowledge: 7,
+//     group: 'FEU 2',
+//     interests: ['JavaScript', 'Java'],
+//   },
+//   {
+//     name: 'John',
+//     surname: 'Doe',
+//     age: 35,
+//     phone: '+370678115214',
+//     email: 'email@email2.com',
+//     itKnowledge: 7,
+//     group: 'FEU 2',
+//     interests: ['JavaScript', 'Python'],
+//   },
+//   {
+//     name: 'Steve',
+//     surname: 'Doe',
+//     age: 20,
+//     phone: '+370678115214',
+//     email: 'email@email3.com',
+//     itKnowledge: 5,
+//     group: 'FEU 2',
+//     interests: ['Java'],
+//   },
+//   {
+//     name: 'Steve',
+//     surname: 'Doe',
+//     age: 40,
+//     phone: '+370678115214',
+//     email: 'email@email4.com',
+//     itKnowledge: 10,
+//     group: 'FEU 2',
+//     interests: ['JavaScript', 'Java', 'PHP'],
+//   },
+//   {
+//     name: 'Steve',
+//     surname: 'Doe',
+//     age: 18,
+//     phone: '+370678115214',
+//     email: 'email@email5.com',
+//     itKnowledge: 1,
+//     group: 'FEU 2',
+//     interests: [],
+//   },
+// ]
 
-function init(initialData) {
-  renderInitialData(initialData)
+function init() {
+  renderInitialData()
   
   const studentForm = document.querySelector('#student-form')
   formLocalStorageHandler(studentForm)
@@ -97,6 +97,7 @@ function init(initialData) {
     // }
 
     const studentData = {
+      id: Math.random(),
       name,
       surname,
       age,
@@ -107,7 +108,20 @@ function init(initialData) {
       interests: interestsData,
     }
 
-    renderSingleStudent(studentData)
+    
+    const studentsListStorageData = JSON.parse(localStorage.getItem('students-data'))
+    // let studentsListData = []
+    
+    // if (studentsListStorageData) {
+      //   studentsListData = studentsListStorageData
+      // }
+      
+    let studentsListData = studentsListStorageData ? studentsListStorageData : []
+    studentsListData.push(studentData)
+      
+    localStorage.setItem('students-data', JSON.stringify(studentsListData))
+    
+    renderSingleStudent(studentData, studentsListData.length - 1)
     
     form.reset()
 
@@ -116,7 +130,16 @@ function init(initialData) {
   })
 }
 
-init(initialData)
+init()
+
+
+function renderInitialData() {
+  const studentsData = JSON.parse(localStorage.getItem('students-data'))
+
+  if (studentsData) {
+    studentsData.forEach((student, index) => renderSingleStudent(student, index))
+  }
+}
 
 function setInputValueFromStorage(key, form) {
   if (key === 'interest') {
@@ -172,11 +195,7 @@ function formLocalStorageHandler(form) {
   })
 }
 
-function renderInitialData(studentsData) {
-  studentsData.forEach(student => renderSingleStudent(student))
-}
-
-function renderSingleStudent(student) {
+function renderSingleStudent(student, index) {
   const name = student.name
   const surname = student.surname
   const age = student.age
@@ -256,8 +275,16 @@ function renderSingleStudent(student) {
   deleteStudentButton.textContent = 'Remove Student'
 
   deleteStudentButton.addEventListener('click', () => {
-    studentItem.remove()
+    const studentsListStorageData = JSON.parse(localStorage.getItem('students-data'))
+    // studentsListStorageData.splice(index, 1)
 
+    const updatedStudentsList = studentsListStorageData.filter(studentData => {
+      return student.id !== studentData.id
+    })
+
+    localStorage.setItem('students-data', JSON.stringify(updatedStudentsList))
+    studentItem.remove()
+    
     alertMessage(`Student (${name} ${surname}) successfully removed`, 'danger')
   })
 

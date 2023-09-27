@@ -55,7 +55,6 @@ function init(initialData) {
   renderInitialData(initialData)
   
   const studentForm = document.querySelector('#student-form')
-  
   formLocalStorageHandler(studentForm)
   rangeOutputDisplay()
   
@@ -119,131 +118,57 @@ function init(initialData) {
 
 init(initialData)
 
-function formLocalStorageHandler(form) {
-  const nameInput = form.name
+function setInputValueFromStorage(key, form) {
+  if (key === 'interest') {
+    const localStorageInterests = JSON.parse(localStorage.getItem(key))
 
-  if (localStorage.getItem('name')) {
-    nameInput.value = localStorage.getItem('name')
-  }
-
-  nameInput.addEventListener('input', () => {
-    localStorage.setItem('name', nameInput.value)
-  })
-
-
-  const surnameInput = form.surname
-
-  if (localStorage.getItem('surname')) {
-    surnameInput.value = localStorage.getItem('surname')
-  }
-
-  surnameInput.addEventListener('input', () => {
-    localStorage.setItem('surname', surnameInput.value)
-  })
-
-
-  const ageInput = form.age
-
-  if (localStorage.getItem('age')) {
-    ageInput.value = localStorage.getItem('age')
-  }
-
-  ageInput.addEventListener('input', () => {
-    localStorage.setItem('age', ageInput.value)
-  })
-
-
-  const phoneInput = form.phone
-
-  if (localStorage.getItem('phone')) {
-    phoneInput.value = localStorage.getItem('phone')
-  }
-
-  phoneInput.addEventListener('input', () => {
-    localStorage.setItem('phone', phoneInput.value)
-  })
-
-
-  const emailInput = form.email
-
-  if (localStorage.getItem('email')) {
-    emailInput.value = localStorage.getItem('email')
-  }
-
-  emailInput.addEventListener('input', () => {
-    localStorage.setItem('email', emailInput.value)
-  })
-
-
-  const itKnowledgeInput = form['it-knowledge']
-
-  if (localStorage.getItem('it-knowledge')) {
-    itKnowledgeInput.value = localStorage.getItem('it-knowledge')
-  }
-
-  itKnowledgeInput.addEventListener('input', () => {
-    localStorage.setItem('it-knowledge', itKnowledgeInput.value)
-  })
-
-
-
-
-  const checkedGroupElement = form.querySelector(`input[name="group"][value="${localStorage.getItem('group')}"]`)
-  
-  if (checkedGroupElement) {
-    checkedGroupElement.checked = true
-  }
-
-  form.group.forEach(groupInput => {
-    // if (localStorage.getItem('group') && groupInput.value === localStorage.getItem('group')) {
-    //   groupInput.checked = true
-    // }
-  
-    groupInput.addEventListener('input', () => {
-      localStorage.setItem('group', groupInput.value)
-    })
-  })
-
-
-  
-  const localStorageInterests = JSON.parse(localStorage.getItem('interest'))
-
-  if (localStorageInterests) {   
-    const interestElements = form.querySelectorAll('[name="interest"]')
-    
-    interestElements.forEach(interestElement => {
-      const interestValue = interestElement.value
+    if (localStorageInterests) {   
+      const interestElements = form.querySelectorAll(`[name="${key}"]`)
       
-      if (localStorageInterests.includes(interestValue)) {
-        interestElement.checked = true
-      } else {
-        interestElement.removeAttribute('checked')
-      }
-    })
-  }
+      interestElements.forEach(interestElement => {
+        const interestValue = interestElement.value
+        
+        if (localStorageInterests.includes(interestValue)) {
+          interestElement.checked = true
+        } else {
+          interestElement.removeAttribute('checked')
+        }
+      })
+    }
 
-  form.interest.forEach(groupInput => {
-    groupInput.addEventListener('input', () => {
-      console.log('veikia')
+    return
+  } 
+ 
+  const input = form.elements[key]
+  if (localStorage.getItem(key)) {
+    input.value = localStorage.getItem(key)
+  }
+}
+
+function formLocalStorageHandler(form) {
+  form.addEventListener('input', (event) => {
+    const key = event.target.name
+    const value = event.target.value
+
+    if (key === 'interest') {
       const checkedInterests = form.querySelectorAll('[name="interest"]:checked')
       
       const checkedInterestValues = [...checkedInterests].map(interest => interest.value)
 
       localStorage.setItem('interest', JSON.stringify(checkedInterestValues))
-    })
+    } else {
+      localStorage.setItem(key, value)
+    }
   })
 
+  const inputNames = ['name', 'surname', 'age', 'phone', 'email', 'it-knowledge', 'group', 'interest']
+
+  inputNames.forEach(name => setInputValueFromStorage(name, form))
 
   form.addEventListener('submit', (event) => {
     event.preventDefault()
-    localStorage.removeItem('name')
-    localStorage.removeItem('surname')
-    localStorage.removeItem('age')
-    localStorage.removeItem('phone')
-    localStorage.removeItem('email')
-    localStorage.removeItem('it-knowledge')
-    localStorage.removeItem('group')
-    localStorage.removeItem('interest')
+
+    inputNames.forEach(name => localStorage.removeItem(name))
   })
 }
 

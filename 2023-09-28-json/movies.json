@@ -1,0 +1,230 @@
+[
+  {
+    "name": "The Covenant",
+    "ratings": {
+      "rate": 7.6,
+      "rated": 22000
+    },
+    "releaseDate": 2023,
+    "about": "During the war in Afghanistan, a local interpreter risks his own life to carry an injured sergeant across miles of grueling terrain.",
+    "genres": ["Action", "Thriller", "war"],
+    "producers": ["Guy Ritchie"],
+    "actors": ["Guy Ritchie", "Ivan Atkinson", "Marn Davies"]
+  },
+  {
+
+    "name": "The Pope's Exorcist",
+
+    "ratings": {
+
+      "rate": 6.1,
+
+      "rated": 28000
+
+    },
+
+    "releaseDate": 2023,
+
+    "about": "Follow Gabriele Amorth, the Vatican's leading exorcist, as he investigates the possession of a child and uncovers a conspiracy the Vatican has tried to keep secret.",
+
+    "genres": ["Horror", "Thriller"],
+
+    "producers": ["Julius Avery"],
+
+    "actors": ["Russell Crowe", "Daniel Zovatto", "Alex Essoe"]
+
+  },
+
+  {
+
+    "name": "Evil Dead",
+
+    "ratings": {
+
+      "rate": 6.5,
+
+      "rated": 185000
+
+    },
+
+    "releaseDate": 2013,
+
+    "about": "Five friends head to a remote cabin, where the discovery of a Book of the Dead leads them to unwittingly summon up demons living in the nearby woods.",
+
+    "genres": ["Horror"],
+
+    "producers": ["Fede Alvarez"],
+
+    "actors": ["Jeny Levy", "Shiloh Fernandez", "Jessica Lucas"]
+
+  },
+
+  {
+
+    "name": "The Godfather",
+
+    "ratings": {
+
+      "rate": 9.2,
+
+      "rated": 1900000
+
+    },
+
+    "releaseDate": 1972,
+
+    "about": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
+
+    "genres": ["Crime", "Drama"],
+
+    "producers": ["Francis Ford Coppola"],
+
+    "actors": ["Marlon Brando", "Al Pacino", "Jemes Caan"]
+
+  },
+
+  {
+
+    "name": "The Dark Knight",
+
+    "ratings": {
+
+      "rate": 9,
+
+      "rated": 2700000
+
+    },
+
+    "releaseDate": 2008,
+
+    "about": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+
+    "genres": ["Crime", "Drama", "ACtion"],
+
+    "producers": ["Christopher Nolan"],
+
+    "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"]
+
+  },
+
+  {
+
+    "name": "Joker",
+
+    "ratings": {
+
+      "rate": 8.4,
+
+      "rated": 1300000
+
+    },
+
+    "releaseDate": 2019,
+
+    "about": "The rise of Arthur Fleck, from aspiring stand-up comedian and pariah to Gotham's clown prince and leader of the revolution.",
+
+    "genres": ["Crime", "Drama", "Thriller"],
+
+    "producers": ["Todd Phillips"],
+
+    "actors": ["Joaquin Pheonix", "Robert De Niro", "Zazie Beetz"]
+
+  },
+
+  {
+
+    "name": "Yojimbo",
+
+    "ratings": {
+
+      "rate": 8.2,
+
+      "rated": 126000
+
+    },
+
+    "releaseDate": 1961,
+
+    "about": "A crafty ronin comes to a town divided by two criminal gangs and decides to play them against each other to free the town.",
+
+    "genres": ["Action", "Drama", "Thriller"],
+
+    "producers": ["Akira Kurosawa"],
+
+    "actors": ["Toshiro Mifune", "Eijiro Tono", "Tatsuya Nakadaiz"]
+
+  },
+
+  {
+
+    "name": "Inside Out",
+
+    "ratings": {
+
+      "rate": 8.1,
+
+      "rated": 734000
+
+    },
+
+    "releaseDate": 2015,
+
+    "about": "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
+
+    "genres": ["Animation", "Adventure", "Comedy"],
+
+    "producers": ["Pete Docter", "Ronnie Del Carmen"],
+
+    "actors": ["Amy Poehler", "Bill Hader", "Lewis Black"]
+
+  },
+
+  {
+
+    "name": "Dial M for Murder",
+
+    "ratings": {
+
+      "rate": 8.2,
+
+      "rated": 180000
+
+    },
+
+    "releaseDate": 1954,
+
+    "about": "A former tennis star arranges the murder of his adulterous wife.",
+
+    "genres": ["Crime", "Thriller"],
+
+    "producers": ["Alfred Hitchcock"],
+
+    "actors": ["Ray Milland", "Grace Kelly", "Robert Cummings"]
+
+  },
+
+  {
+
+    "name": "The Secret in Their Eyes",
+
+    "ratings": {
+
+      "rate": 8.2,
+
+      "rated": 214000
+
+    },
+
+    "releaseDate": 2009,
+
+    "about": "A retired legal counselor writes a novel hoping to find closure for one of his past unresolved homicide cases and for his unreciprocated love with his superior - both of which still haunt him decades later.",
+
+    "genres": ["Drama", "Mystery", "Romance"],
+
+    "producers": ["Joan Jose Campanella"],
+
+    "actors": ["Ricardo Darin", "Soledad Villamil", "Pablo Rago"]
+
+  }
+
+]

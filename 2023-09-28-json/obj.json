@@ -1,0 +1,12 @@
+{
+  "name": "John",
+  "age": 28,
+  "children": ["Child 1", "Child 2"],
+  "address": {
+    "street": "Vilniaus st.",
+    "city": "Vilnius",
+    "country": "Lithuania"
+  },
+  "married": true,
+  "test2": null
+}

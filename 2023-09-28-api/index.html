@@ -8,14 +8,22 @@
 <body>
   <button id="random-joke-button">Get a joke</button>
 
-  <form>
-    <select name="" id="">
-      <option>Animals</option>
-      <option>Career</option>
-      <option>Celebrity</option>
-    </select>
+  <form id="category-form">
+    <div class="form-control">
+      <label for="category-select">Category:</label>
+      <select name="category-select" id="category-select"></select>
+    </div>
 
-    <input type="submit" value="Get a joke by category">
+    <input type="submit" value="Get a joke by category" id="category-submit">
+  </form>
+
+  <form id="search-form">
+    <div class="form-control">
+      <label for="search-input">Search phrase:</label>
+      <input type="text" name="search-input" id="search-input">
+    </div>
+
+    <input type="submit" value="Search" id="search-submit">
   </form>
 
   <p id="joke-paragraph"></p>

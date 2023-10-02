@@ -2,23 +2,23 @@ import { firsLetterUppercase } from './utils.js'
 
 function init() {
   const nameForm = document.querySelector('#name-form')
-  
-  nameForm.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    
-    const outputParagraph = document.querySelector('#output-paragraph')
-
-    const enteredName = event.target.name.value
-
-    const ageOutput = await getAgeByName(enteredName)
-    const countryOutput = await getCountryByName(enteredName)
-    const genderOutput = await getGenderByName(enteredName)
-
-    outputParagraph.textContent = `${ageOutput} ${countryOutput} ${genderOutput}`
-  })
+  nameForm.addEventListener('submit', nameFormSubmit)
 }
 
 init()
+
+async function nameFormSubmit(event) {
+  event.preventDefault()
+  
+  const enteredName = event.target.name.value
+  
+  const ageOutput = await getAgeByName(enteredName)
+  const countryOutput = await getCountryByName(enteredName)
+  const genderOutput = await getGenderByName(enteredName)
+  
+  const outputParagraph = document.querySelector('#output-paragraph')
+  outputParagraph.textContent = `${ageOutput} ${countryOutput} ${genderOutput}`
+}
 
 async function getAgeByName(enteredName) {
   const res = await fetch('https://api.agify.io?name=' + enteredName)

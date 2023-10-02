@@ -7,6 +7,17 @@
 </head>
 <body>
   
-  <script src="dogs.js"></script>
+  <form id="dogs-form">
+    <div class="form-control">
+      <label for="breed-select">Select a breed:</label>
+      <select name="breed-select" id="breed-select"></select>
+    </div>
+
+    <input type="submit" value="Get a Photo" id="breed-submit" disabled>
+  </form>
+
+  <img id="dog-image">
+
+  <script type="module" src="dogs.js"></script>
 </body>
 </html>

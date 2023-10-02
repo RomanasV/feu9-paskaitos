@@ -1,3 +1,5 @@
+import { createOptionElement, firsLetterUppercase } from './utils.js'
+
 function getRandomJoke() {
   const randomJokeButton = document.querySelector('#random-joke-button')
 
@@ -31,9 +33,12 @@ function getJokeByCategory() {
       const categorySelectElement = categoryForm['category-select']
 
       categories.forEach(category => {
-        const categoryOptionElement = document.createElement('option')
-        categoryOptionElement.textContent = '- ' + category.at(0).toUpperCase() + category.slice(1)
-        categoryOptionElement.value = category
+        // const categoryOptionElement = document.createElement('option')
+        // categoryOptionElement.textContent = '- ' + firsLetterUppercase(category)
+        // categoryOptionElement.value = category
+
+        const categoryOptionElement = createOptionElement('- ' + firsLetterUppercase(category), category)
+
         categorySelectElement.append(categoryOptionElement)
       })
 

@@ -1,8 +1,4 @@
-import { getPosts } from './getData.js'
-
-export default async function postsList() {
-  const posts = await getPosts()
-
+export default function postsList(posts) {
   const postsWrapper = document.createElement('div')
   postsWrapper.classList.add('posts-wrapper')
 

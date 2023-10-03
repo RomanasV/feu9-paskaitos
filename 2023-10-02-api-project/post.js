@@ -9,6 +9,15 @@ function init() {
     .then(res => res.json())
     .then(post => {
       console.log(post)
+      console.log(post.comments)
+      
+      post.comments.forEach(comment => {
+        console.log(comment)
+        console.log(comment.name)
+        console.log(comment.email)
+        console.log(comment.body)
+      })
+
       const userName = post.user.name
       const userId = post.userId
 
@@ -22,7 +31,10 @@ function init() {
 
       author.append('Author: ', authorLink)
 
-      contentElement.append(postTitle, author)
+      const postBody = document.createElement('p')
+      postBody.textContent = post.body
+
+      contentElement.append(postTitle, author, postBody)
     })
 }
 

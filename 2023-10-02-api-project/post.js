@@ -1,9 +1,14 @@
+import header from './header.js'
+
 function init() {
   const queryParams = location.search
   const urlParams = new URLSearchParams(queryParams)
   const postId = urlParams.get('post_id')
 
-  const contentElement = document.querySelector('#content') 
+  const contentElement = document.querySelector('#content')
+
+  const headerElement = header()
+  contentElement.append(headerElement)
 
   fetch(`https://jsonplaceholder.typicode.com/posts/${postId}?_expand=user&_embed=comments`)
     .then(res => res.json())
@@ -11,12 +16,7 @@ function init() {
       console.log(post)
       console.log(post.comments)
       
-      post.comments.forEach(comment => {
-        console.log(comment)
-        console.log(comment.name)
-        console.log(comment.email)
-        console.log(comment.body)
-      })
+
 
       const userName = post.user.name
       const userId = post.userId
@@ -34,7 +34,29 @@ function init() {
       const postBody = document.createElement('p')
       postBody.textContent = post.body
 
-      contentElement.append(postTitle, author, postBody)
+      const commentsWrapper = document.createElement('div')
+      commentsWrapper.classList.add('comments-wrapper')
+
+      const commentsTitle = document.createElement('h2')
+      commentsTitle.textContent = 'Comments:'
+
+      const commentsList = document.createElement('div')
+      commentsList.classList.add('comments-list')
+
+      post.comments.forEach(comment => {
+        const commentItem = document.createElement('div')
+        commentItem.classList.add('comment-item')
+
+        commentItem.innerHTML = `<h3>${comment.name}</h3>
+                                 <span>Commented by: ${comment.email}</span>
+                                 <p>${comment.body}</p>`
+
+        commentsList.append(commentItem)
+      })
+
+      commentsWrapper.append(commentsTitle, commentsList)
+
+      contentElement.append(postTitle, author, postBody, commentsWrapper)
     })
 }
 

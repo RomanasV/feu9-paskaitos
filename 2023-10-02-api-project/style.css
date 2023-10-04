@@ -1,0 +1,9 @@
+.menu-item-link {
+  color: black;
+  text-decoration: none;
+}
+
+.menu-item-link.active {
+  color: orangered;
+  text-decoration: underline;
+}

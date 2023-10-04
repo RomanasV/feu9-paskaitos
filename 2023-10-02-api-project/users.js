@@ -1,4 +1,5 @@
 import { getUsers } from './getData.js'
+import header from './header.js'
 
 async function init() {
   const users = await getUsers('?_embed=posts')
@@ -6,9 +7,11 @@ async function init() {
 
   const contentElement = document.querySelector('#content')
   
+  const headerElement = header()
+
   const usersList = document.createElement('ul')
 
-  contentElement.append(usersList)
+  contentElement.append(headerElement, usersList)
 
   users.forEach(user => {
     console.log(user)

@@ -9,11 +9,15 @@ export default function postsList(posts) {
   postsListElement.classList.add('posts-list')
 
   posts.forEach(post => {
-    const userName = post.user.name
+    let userName = ''
+
+    if (post.user) {
+      userName = ' - ' + post.user.name
+    }
 
     const postItem = document.createElement('li')
     const postLink = document.createElement('a')
-    postLink.textContent = `${post.id}. ${post.title} - ${userName}` 
+    postLink.textContent = `${post.id}. ${post.title}${userName}` 
     postLink.href = './post.html?post_id=' + post.id
 
     postItem.append(postLink)
